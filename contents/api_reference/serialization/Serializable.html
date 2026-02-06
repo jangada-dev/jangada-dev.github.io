@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Serializable &#8212; Jangada 0.0.0-dev</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=638d6b7a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=fe683160"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api_reference/serialization/Serializable';</script>
+    <link rel="icon" href="../../../_static/jangada.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="jangada.serialization.Serializable.__init__" href="generated/jangada.serialization.Serializable.__init__.html" />
+    <link rel="prev" title="jangada.serialization.SerializableProperty.copiable" href="generated/jangada.serialization.SerializableProperty.copiable.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0.0-dev" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/jangada.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/jangada.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Jangada</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="serialization_index.html">Serialization System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_aliases.html">Type Aliases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.html">jangada.serialization.Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.html">jangada.serialization.SerializableProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.html">jangada.serialization.SerializableMetatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.get_full_qualified_name.html">jangada.serialization.get_full_qualified_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.check_types.html">jangada.serialization.check_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SerializableProperty.html"><code class="docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__set_name__.html">jangada.serialization.SerializableProperty.__set_name__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__get__.html">jangada.serialization.SerializableProperty.__get__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__set__.html">jangada.serialization.SerializableProperty.__set__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__delete__.html">jangada.serialization.SerializableProperty.__delete__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.postinitializer.html">jangada.serialization.SerializableProperty.postinitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.default.html">jangada.serialization.SerializableProperty.default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.parser.html">jangada.serialization.SerializableProperty.parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.add_observer.html">jangada.serialization.SerializableProperty.add_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.remove_observer.html">jangada.serialization.SerializableProperty.remove_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.writeonce.html">jangada.serialization.SerializableProperty.writeonce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.copiable.html">jangada.serialization.SerializableProperty.copiable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Serializable</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__init__.html">jangada.serialization.Serializable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.copy.html">jangada.serialization.Serializable.copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.serialize.html">jangada.serialization.Serializable.serialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.deserialize.html">jangada.serialization.Serializable.deserialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__eq__.html">jangada.serialization.Serializable.__eq__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__copy__.html">jangada.serialization.Serializable.__copy__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.register_primitive_type.html">jangada.serialization.Serializable.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_primitive_type.html">jangada.serialization.Serializable.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.is_primitive_type.html">jangada.serialization.Serializable.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.register_dataset_type.html">jangada.serialization.Serializable.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_dataset_type.html">jangada.serialization.Serializable.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.is_dataset_type.html">jangada.serialization.Serializable.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.serializable_types.html">jangada.serialization.Serializable.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.primitive_types.html">jangada.serialization.Serializable.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.dataset_types.html">jangada.serialization.Serializable.dataset_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Persistable.html"><code class="docutils literal notranslate"><span class="pre">Persistable</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__init__.html">jangada.serialization.Persistable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__enter__.html">jangada.serialization.Persistable.__enter__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__exit__.html">jangada.serialization.Persistable.__exit__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.save.html">jangada.serialization.Persistable.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.load.html">jangada.serialization.Persistable.load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.save_serialized_data.html">jangada.serialization.Persistable.save_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.load_serialized_data.html">jangada.serialization.Persistable.load_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.html">jangada.serialization.Persistable.ProxyDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.load.html">jangada.serialization.load</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ProxyDataset.html"><code class="docutils literal notranslate"><span class="pre">ProxyDataset</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.__getitem__.html">jangada.serialization.Persistable.ProxyDataset.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.__setitem__.html">jangada.serialization.Persistable.ProxyDataset.__setitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.append.html">jangada.serialization.Persistable.ProxyDataset.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.attrs.html">jangada.serialization.Persistable.ProxyDataset.attrs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.shape.html">jangada.serialization.Persistable.ProxyDataset.shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.size.html">jangada.serialization.Persistable.ProxyDataset.size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.dtype.html">jangada.serialization.Persistable.ProxyDataset.dtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.ndim.html">jangada.serialization.Persistable.ProxyDataset.ndim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.nbytes.html">jangada.serialization.Persistable.ProxyDataset.nbytes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SerializableMetatype.html"><code class="docutils literal notranslate"><span class="pre">SerializableMetatype</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__new__.html">jangada.serialization.SerializableMetatype.__new__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__getitem__.html">jangada.serialization.SerializableMetatype.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__contains__.html">jangada.serialization.SerializableMetatype.__contains__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.register_primitive_type.html">jangada.serialization.SerializableMetatype.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.remove_primitive_type.html">jangada.serialization.SerializableMetatype.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.is_primitive_type.html">jangada.serialization.SerializableMetatype.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.register_dataset_type.html">jangada.serialization.SerializableMetatype.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.remove_dataset_type.html">jangada.serialization.SerializableMetatype.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.is_dataset_type.html">jangada.serialization.SerializableMetatype.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.serializable_types.html">jangada.serialization.SerializableMetatype.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.primitive_types.html">jangada.serialization.SerializableMetatype.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.dataset_types.html">jangada.serialization.SerializableMetatype.dataset_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.serializable_properties.html">jangada.serialization.SerializableMetatype.serializable_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.copiable_properties.html">jangada.serialization.SerializableMetatype.copiable_properties</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="type_aliases.html">Type Aliases</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mixin/index.html">Mixins (<code class="docutils literal notranslate"><span class="pre">jangada.mixin</span></code>)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Identifiable.html">jangada.mixin.Identifiable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Taggable.html">jangada.mixin.Taggable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Nameable.html">jangada.mixin.Nameable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Describable.html">jangada.mixin.Describable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Colorable.html">jangada.mixin.Colorable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Activatable.html">jangada.mixin.Activatable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../display/index.html">Terminal Display</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../display/generated/jangada.display.DisplaySettings.html">jangada.display.DisplaySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../display/generated/jangada.display.Displayable.html">jangada.display.Displayable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../system/index.html">Hierarchical System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system/generated/jangada.system.System.html">jangada.system.System</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+        <li class="toctree-l1">
+          <a class="reference internal" href="../../../py-modindex.html">Python Module Index</a>
+        </li>
+  </ul>
+</nav></div>
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">Serializable</span></code></span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="serializable">
+<h1><code class="docutils literal notranslate"><span class="pre">Serializable</span></code><a class="headerlink" href="#serializable" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="jangada.serialization.Serializable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jangada.serialization.</span></span><span class="sig-name descname"><span class="pre">Serializable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jangada.serialization.Serializable" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Base class for objects that can be serialized to/from dictionaries.</p>
+<p>Serializable provides a framework for converting Python objects to dictionary
+structures suitable for persistence in HDF5 files or other storage backends.
+It handles nested objects, collections, primitive types, and special dataset
+types like NumPy arrays and Pandas timestamps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Variable positional arguments. Supports:
+- No args: Initialize from kwargs
+- One Serializable instance: Copy constructor</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments mapping property names to values.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If args don’t match any supported initialization signature, or if
+kwargs contain unknown property names.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.html#jangada.serialization.SerializableProperty" title="jangada.serialization.SerializableProperty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a></dt><dd><p>Descriptor for serializable properties</p>
+</dd>
+<dt><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.html#jangada.serialization.SerializableMetatype" title="jangada.serialization.SerializableMetatype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SerializableMetatype</span></code></a></dt><dd><p>Metaclass that enables serialization</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>All Serializable properties must be SerializableProperty descriptors.
+Regular attributes are not included in serialization.</p>
+<p>The serialization format uses dictionaries with a special ‘__class__’ key
+to store the fully qualified class name. This allows accurate reconstruction
+of the original object type.</p>
+<p>When using is_copy=True in serialize(), only properties with copiable=True
+are included. This is useful for persistence - you can mark cached or
+temporary properties as non-copiable.</p>
+<p class="rubric">Examples</p>
+<p>Define a Serializable class:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">293.15</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">373.15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exp</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Test&#39;</span>
+</pre></div>
+</div>
+<p>Serialize to a dictionary:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;__class__&#39;</span><span class="p">]</span>
+<span class="go">&#39;__main__.Experiment&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<span class="go">&#39;Test&#39;</span>
+</pre></div>
+</div>
+<p>Deserialize back to an object:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Test&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span><span class="o">.</span><span class="n">temperature</span>
+<span class="go">373.15</span>
+</pre></div>
+</div>
+<p>Copy an object:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">copy</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copy</span> <span class="ow">is</span> <span class="n">exp</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">copy</span> <span class="o">==</span> <span class="n">exp</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Nested objects work automatically:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Trial</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">trial_num</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">experiment</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trial</span> <span class="o">=</span> <span class="n">Trial</span><span class="p">(</span><span class="n">trial_num</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="n">exp</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Test&#39;</span>
+</pre></div>
+</div>
+<p>Collections are handled recursively:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exp_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Exp</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serialized</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">exp_list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">serialized</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">restored</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="construction-and-initialization">
+<h2>Construction and Initialization<a class="headerlink" href="#construction-and-initialization" title="Link to this heading">#</a></h2>
+<p>Methods for creating and initializing Serializable objects.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.__init__.html#jangada.serialization.Serializable.__init__" title="jangada.serialization.Serializable.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Initialize a Serializable object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.copy.html#jangada.serialization.Serializable.copy" title="jangada.serialization.Serializable.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.copy</span></code></a>()</p></td>
+<td><p>Create an independent copy of this object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="serialization-methods">
+<h2>Serialization Methods<a class="headerlink" href="#serialization-methods" title="Link to this heading">#</a></h2>
+<p>Static methods for converting objects to/from dictionary structures.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.serialize.html#jangada.serialization.Serializable.serialize" title="jangada.serialization.Serializable.serialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.serialize</span></code></a>(obj[, is_copy])</p></td>
+<td><p>Recursively serialize an object to a dictionary structure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.deserialize.html#jangada.serialization.Serializable.deserialize" title="jangada.serialization.Serializable.deserialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.deserialize</span></code></a>(data)</p></td>
+<td><p>Recursively deserialize data to reconstruct objects.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="comparison-and-copying">
+<h2>Comparison and Copying<a class="headerlink" href="#comparison-and-copying" title="Link to this heading">#</a></h2>
+<p>Special methods for object comparison and copying protocol support.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.__eq__.html#jangada.serialization.Serializable.__eq__" title="jangada.serialization.Serializable.__eq__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.__eq__</span></code></a>(other)</p></td>
+<td><p>Compare equality based on copiable properties.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.__copy__.html#jangada.serialization.Serializable.__copy__" title="jangada.serialization.Serializable.__copy__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.__copy__</span></code></a>()</p></td>
+<td><p>Support for the copy module.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="type-registration">
+<h2>Type Registration<a class="headerlink" href="#type-registration" title="Link to this heading">#</a></h2>
+<p>Class methods for managing the type registry system.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.register_primitive_type.html#jangada.serialization.Serializable.register_primitive_type" title="jangada.serialization.Serializable.register_primitive_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.register_primitive_type</span></code></a>(...)</p></td>
+<td><p>Register a type as a primitive that can be serialized as-is.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_primitive_type.html#jangada.serialization.Serializable.remove_primitive_type" title="jangada.serialization.Serializable.remove_primitive_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.remove_primitive_type</span></code></a>(...)</p></td>
+<td><p>Remove a type from the primitive types registry.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.is_primitive_type.html#jangada.serialization.Serializable.is_primitive_type" title="jangada.serialization.Serializable.is_primitive_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.is_primitive_type</span></code></a>(type_)</p></td>
+<td><p>Check if a type is registered as a primitive.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.register_dataset_type.html#jangada.serialization.Serializable.register_dataset_type" title="jangada.serialization.Serializable.register_dataset_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.register_dataset_type</span></code></a>(...)</p></td>
+<td><p>Register a type that requires special handling for serialization.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_dataset_type.html#jangada.serialization.Serializable.remove_dataset_type" title="jangada.serialization.Serializable.remove_dataset_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.remove_dataset_type</span></code></a>(dataset_type)</p></td>
+<td><p>Remove a dataset type registration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.is_dataset_type.html#jangada.serialization.Serializable.is_dataset_type" title="jangada.serialization.Serializable.is_dataset_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.is_dataset_type</span></code></a>(type_)</p></td>
+<td><p>Check if a type is registered as a dataset type.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="read-only-properties">
+<h2>Read-Only Properties<a class="headerlink" href="#read-only-properties" title="Link to this heading">#</a></h2>
+<p>Properties that provide information about registered types and properties.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.serializable_types.html#jangada.serialization.Serializable.serializable_types" title="jangada.serialization.Serializable.serializable_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.serializable_types</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.primitive_types.html#jangada.serialization.Serializable.primitive_types" title="jangada.serialization.Serializable.primitive_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.primitive_types</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.dataset_types.html#jangada.serialization.Serializable.dataset_types" title="jangada.serialization.Serializable.dataset_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable.dataset_types</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="basic-usage">
+<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h3>
+<p>Define a simple Serializable class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jangada.serialization</span><span class="w"> </span><span class="kn">import</span> <span class="n">Serializable</span><span class="p">,</span> <span class="n">SerializableProperty</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">293.15</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create and serialize an object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">373.15</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+
+<span class="c1"># data is now a dictionary:</span>
+<span class="c1"># {</span>
+<span class="c1">#     &#39;__class__&#39;: &#39;mymodule.Experiment&#39;,</span>
+<span class="c1">#     &#39;name&#39;: &#39;Test1&#39;,</span>
+<span class="c1">#     &#39;temperature&#39;: 373.15,</span>
+<span class="c1">#     &#39;data&#39;: None</span>
+<span class="c1"># }</span>
+</pre></div>
+</div>
+<p>Deserialize back to an object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Test1&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="o">.</span><span class="n">temperature</span><span class="p">)</span>  <span class="c1"># 373.15</span>
+</pre></div>
+</div>
+</section>
+<section id="nested-objects">
+<h3>Nested Objects<a class="headerlink" href="#nested-objects" title="Link to this heading">#</a></h3>
+<p>Serialization handles nested Serializable objects automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Trial</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">trial_num</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">experiment</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">trial</span> <span class="o">=</span> <span class="n">Trial</span><span class="p">(</span><span class="n">trial_num</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="n">exp</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
+<span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Nested object is preserved</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Test1&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="collections">
+<h3>Collections<a class="headerlink" href="#collections" title="Link to this heading">#</a></h3>
+<p>Lists, dicts, tuples, and sets are handled recursively:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">experiments</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Exp1&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">300.0</span><span class="p">),</span>
+    <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Exp2&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">350.0</span><span class="p">),</span>
+    <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Exp3&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">400.0</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">experiments</span><span class="p">)</span>
+<span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">restored</span><span class="p">))</span>  <span class="c1"># 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Exp1&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="copying-objects">
+<h3>Copying Objects<a class="headerlink" href="#copying-objects" title="Link to this heading">#</a></h3>
+<p>Create independent copies with the copy() method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Original&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">300.0</span><span class="p">)</span>
+<span class="n">copied</span> <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">copied</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Modified&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">original</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Original&#39; (unchanged)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">copied</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>    <span class="c1"># &#39;Modified&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="selective-copying">
+<h3>Selective Copying<a class="headerlink" href="#selective-copying" title="Link to this heading">#</a></h3>
+<p>Use the copiable flag to control what gets copied:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DataProcessor</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="c1"># This will be copied/serialized</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># This won&#39;t be copied (cache, temporary state)</span>
+    <span class="n">cached_result</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">proc</span> <span class="o">=</span> <span class="n">DataProcessor</span><span class="p">(</span><span class="n">input_data</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">cached_result</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Copy only includes copiable properties</span>
+<span class="n">copied</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">copied</span><span class="o">.</span><span class="n">input_data</span><span class="p">)</span>      <span class="c1"># [1, 2, 3]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">copied</span><span class="o">.</span><span class="n">cached_result</span><span class="p">)</span>   <span class="c1"># None (default)</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-primitive-types">
+<h3>Custom Primitive Types<a class="headerlink" href="#custom-primitive-types" title="Link to this heading">#</a></h3>
+<p>Register custom types that serialize as-is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="n">Serializable</span><span class="o">.</span><span class="n">register_primitive_type</span><span class="p">(</span><span class="n">Decimal</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">FinancialData</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">amount</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0.00&#39;</span><span class="p">))</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">FinancialData</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;123.45&#39;</span><span class="p">))</span>
+<span class="n">serialized</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># Decimal values pass through unchanged</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-dataset-types">
+<h3>Custom Dataset Types<a class="headerlink" href="#custom-dataset-types" title="Link to this heading">#</a></h3>
+<p>Register types that need conversion to/from arrays:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CustomMatrix</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">disassemble</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert to array and metadata.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">matrix</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;shape&#39;</span><span class="p">:</span> <span class="n">matrix</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">assemble</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reconstruct from array and metadata.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">CustomMatrix</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">Serializable</span><span class="o">.</span><span class="n">register_dataset_type</span><span class="p">(</span>
+    <span class="n">CustomMatrix</span><span class="p">,</span>
+    <span class="n">disassemble</span><span class="o">=</span><span class="n">disassemble</span><span class="p">,</span>
+    <span class="n">assemble</span><span class="o">=</span><span class="n">assemble</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="numpy-and-pandas-integration">
+<h3>NumPy and Pandas Integration<a class="headerlink" href="#numpy-and-pandas-integration" title="Link to this heading">#</a></h3>
+<p>NumPy arrays and Pandas timestamps work automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Measurement</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">measurement</span> <span class="o">=</span> <span class="n">Measurement</span><span class="p">(</span>
+    <span class="n">timestamp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2024-01-15 12:30:00&#39;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s1">&#39;UTC&#39;</span><span class="p">),</span>
+    <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">])</span>
+<span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">measurement</span><span class="p">)</span>
+<span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Timezone and array are preserved</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">tz</span><span class="p">)</span>  <span class="c1"># &lt;UTC&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (3,)</span>
+</pre></div>
+</div>
+</section>
+<section id="equality-comparison">
+<h3>Equality Comparison<a class="headerlink" href="#equality-comparison" title="Link to this heading">#</a></h3>
+<p>Objects compare based on their copiable properties:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp1</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">300.0</span><span class="p">)</span>
+<span class="n">exp2</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">300.0</span><span class="p">)</span>
+<span class="n">exp3</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">300.0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">exp1</span> <span class="o">==</span> <span class="n">exp2</span><span class="p">)</span>  <span class="c1"># True (same values)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp1</span> <span class="o">==</span> <span class="n">exp3</span><span class="p">)</span>  <span class="c1"># False (different name)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="xref std std-doc">serializable_property</span> - Property descriptor for serializable attributes</p></li>
+<li><p><span class="xref std std-doc">serializable_metatype</span> - Metaclass documentation</p></li>
+<li><p><a class="reference internal" href="type_aliases.html"><span class="doc">Type Aliases</span></a> - Type aliases used in the API</p></li>
+<li><p><span class="xref std std-doc">hdf5_persistence</span> - Using Serializable with HDF5 storage (if available)</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="generated/jangada.serialization.SerializableProperty.copiable.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jangada.serialization.SerializableProperty.copiable</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="generated/jangada.serialization.Serializable.__init__.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jangada.serialization.Serializable.__init__</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.serialization.Serializable"><code class="docutils literal notranslate"><span class="pre">Serializable</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-and-initialization">Construction and Initialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serialization-methods">Serialization Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-and-copying">Comparison and Copying</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-registration">Type Registration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-only-properties">Read-Only Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-objects">Nested Objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collections">Collections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-objects">Copying Objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-copying">Selective Copying</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-primitive-types">Custom Primitive Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-dataset-types">Custom Dataset Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-and-pandas-integration">NumPy and Pandas Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-comparison">Equality Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/contents/api_reference/serialization/Serializable.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Rafael R. L. Benevides, J. M. da Silva.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

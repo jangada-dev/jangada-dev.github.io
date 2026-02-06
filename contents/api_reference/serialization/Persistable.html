@@ -1,0 +1,1422 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Persistable &#8212; Jangada 0.0.0-dev</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=638d6b7a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=fe683160"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api_reference/serialization/Persistable';</script>
+    <link rel="icon" href="../../../_static/jangada.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="jangada.serialization.Persistable.__init__" href="generated/jangada.serialization.Persistable.__init__.html" />
+    <link rel="prev" title="jangada.serialization.Serializable.dataset_types" href="generated/jangada.serialization.Serializable.dataset_types.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0.0-dev" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/jangada.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/jangada.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Jangada</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="serialization_index.html">Serialization System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_aliases.html">Type Aliases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.html">jangada.serialization.Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.html">jangada.serialization.SerializableProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.html">jangada.serialization.SerializableMetatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.get_full_qualified_name.html">jangada.serialization.get_full_qualified_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.check_types.html">jangada.serialization.check_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SerializableProperty.html"><code class="docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__set_name__.html">jangada.serialization.SerializableProperty.__set_name__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__get__.html">jangada.serialization.SerializableProperty.__get__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__set__.html">jangada.serialization.SerializableProperty.__set__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__delete__.html">jangada.serialization.SerializableProperty.__delete__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.postinitializer.html">jangada.serialization.SerializableProperty.postinitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.default.html">jangada.serialization.SerializableProperty.default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.parser.html">jangada.serialization.SerializableProperty.parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.add_observer.html">jangada.serialization.SerializableProperty.add_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.remove_observer.html">jangada.serialization.SerializableProperty.remove_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.writeonce.html">jangada.serialization.SerializableProperty.writeonce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.copiable.html">jangada.serialization.SerializableProperty.copiable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Serializable.html"><code class="docutils literal notranslate"><span class="pre">Serializable</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__init__.html">jangada.serialization.Serializable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.copy.html">jangada.serialization.Serializable.copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.serialize.html">jangada.serialization.Serializable.serialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.deserialize.html">jangada.serialization.Serializable.deserialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__eq__.html">jangada.serialization.Serializable.__eq__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__copy__.html">jangada.serialization.Serializable.__copy__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.register_primitive_type.html">jangada.serialization.Serializable.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_primitive_type.html">jangada.serialization.Serializable.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.is_primitive_type.html">jangada.serialization.Serializable.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.register_dataset_type.html">jangada.serialization.Serializable.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_dataset_type.html">jangada.serialization.Serializable.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.is_dataset_type.html">jangada.serialization.Serializable.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.serializable_types.html">jangada.serialization.Serializable.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.primitive_types.html">jangada.serialization.Serializable.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.dataset_types.html">jangada.serialization.Serializable.dataset_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Persistable</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__init__.html">jangada.serialization.Persistable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__enter__.html">jangada.serialization.Persistable.__enter__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__exit__.html">jangada.serialization.Persistable.__exit__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.save.html">jangada.serialization.Persistable.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.load.html">jangada.serialization.Persistable.load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.save_serialized_data.html">jangada.serialization.Persistable.save_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.load_serialized_data.html">jangada.serialization.Persistable.load_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.html">jangada.serialization.Persistable.ProxyDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.load.html">jangada.serialization.load</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ProxyDataset.html"><code class="docutils literal notranslate"><span class="pre">ProxyDataset</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.__getitem__.html">jangada.serialization.Persistable.ProxyDataset.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.__setitem__.html">jangada.serialization.Persistable.ProxyDataset.__setitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.append.html">jangada.serialization.Persistable.ProxyDataset.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.attrs.html">jangada.serialization.Persistable.ProxyDataset.attrs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.shape.html">jangada.serialization.Persistable.ProxyDataset.shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.size.html">jangada.serialization.Persistable.ProxyDataset.size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.dtype.html">jangada.serialization.Persistable.ProxyDataset.dtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.ndim.html">jangada.serialization.Persistable.ProxyDataset.ndim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.nbytes.html">jangada.serialization.Persistable.ProxyDataset.nbytes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SerializableMetatype.html"><code class="docutils literal notranslate"><span class="pre">SerializableMetatype</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__new__.html">jangada.serialization.SerializableMetatype.__new__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__getitem__.html">jangada.serialization.SerializableMetatype.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__contains__.html">jangada.serialization.SerializableMetatype.__contains__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.register_primitive_type.html">jangada.serialization.SerializableMetatype.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.remove_primitive_type.html">jangada.serialization.SerializableMetatype.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.is_primitive_type.html">jangada.serialization.SerializableMetatype.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.register_dataset_type.html">jangada.serialization.SerializableMetatype.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.remove_dataset_type.html">jangada.serialization.SerializableMetatype.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.is_dataset_type.html">jangada.serialization.SerializableMetatype.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.serializable_types.html">jangada.serialization.SerializableMetatype.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.primitive_types.html">jangada.serialization.SerializableMetatype.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.dataset_types.html">jangada.serialization.SerializableMetatype.dataset_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.serializable_properties.html">jangada.serialization.SerializableMetatype.serializable_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.copiable_properties.html">jangada.serialization.SerializableMetatype.copiable_properties</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="type_aliases.html">Type Aliases</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mixin/index.html">Mixins (<code class="docutils literal notranslate"><span class="pre">jangada.mixin</span></code>)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Identifiable.html">jangada.mixin.Identifiable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Taggable.html">jangada.mixin.Taggable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Nameable.html">jangada.mixin.Nameable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Describable.html">jangada.mixin.Describable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Colorable.html">jangada.mixin.Colorable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Activatable.html">jangada.mixin.Activatable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../display/index.html">Terminal Display</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../display/generated/jangada.display.DisplaySettings.html">jangada.display.DisplaySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../display/generated/jangada.display.Displayable.html">jangada.display.Displayable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../system/index.html">Hierarchical System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system/generated/jangada.system.System.html">jangada.system.System</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+        <li class="toctree-l1">
+          <a class="reference internal" href="../../../py-modindex.html">Python Module Index</a>
+        </li>
+  </ul>
+</nav></div>
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="docutils literal notranslate"><span class="pre">Persistable</span></code></span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="persistable">
+<h1><code class="docutils literal notranslate"><span class="pre">Persistable</span></code><a class="headerlink" href="#persistable" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="jangada.serialization.Persistable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jangada.serialization.</span></span><span class="sig-name descname"><span class="pre">Persistable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jangada.serialization.Persistable" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generated/jangada.serialization.Serializable.html#jangada.serialization.Serializable" title="jangada.serialization.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Serializable</span></code></a></p>
+<p>Base class for objects that can be persisted to HDF5 files.</p>
+<p>Persistable extends Serializable to provide HDF5 file I/O, supporting both
+full object loading and lazy access via context managers. The HDF5 backend
+enables efficient storage of large arrays, hierarchical data structures,
+and metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Variable positional arguments:
+- No args: Normal Serializable construction
+- Single Path/str: Load from file
+- Single Path/str + kwargs: Prepare for context manager</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>For normal construction: property values
+For context manager: must include ‘mode’ parameter</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If kwargs are provided with filepath but ‘mode’ is missing, or if
+unknown kwargs are provided.</p>
+</dd>
+<dt>FileNotFoundError</dt><dd><p>If loading from a non-existent file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="generated/jangada.serialization.Serializable.html#jangada.serialization.Serializable" title="jangada.serialization.Serializable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable</span></code></a></dt><dd><p>Parent class for serialization</p>
+</dd>
+<dt><a class="reference internal" href="../system/index.html#jangada.system.System.ProxyDataset" title="jangada.serialization.Persistable.ProxyDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProxyDataset</span></code></a></dt><dd><p>Lazy loading wrapper for HDF5 datasets</p>
+</dd>
+<dt><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.html#jangada.serialization.SerializableProperty" title="jangada.serialization.SerializableProperty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a></dt><dd><p>Property descriptor</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<section id="hdf5-file-structure">
+<h2>HDF5 File Structure<a class="headerlink" href="#hdf5-file-structure" title="Link to this heading">#</a></h2>
+<p>Files are organized as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>file.hdf5
+└── root (group)
+    ├── __class__ (attribute)
+    ├── property1 (attribute or dataset)
+    ├── property2 (group for lists/dicts)
+    │   ├── __container_type__ (attribute)
+    │   └── ... (items)
+    └── property3 (dataset for arrays)
+        ├── __dataset_type__ (attribute)
+        └── ... (metadata attributes)
+</pre></div>
+</div>
+</section>
+<section id="type-mapping">
+<h2>Type Mapping<a class="headerlink" href="#type-mapping" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>None</strong>: Stored as string ‘NoneType:None’ in attributes</p></li>
+<li><p><strong>str, Number</strong>: Stored directly in attributes</p></li>
+<li><p><strong>Path</strong>: Stored as ‘Path:/absolute/path’ in attributes</p></li>
+<li><p><strong>list, dict</strong>: Stored as groups with __container_type__ attribute</p></li>
+<li><p><strong>numpy arrays, pandas timestamps</strong>: Stored as datasets with __dataset_type__</p></li>
+<li><p><strong>Nested Serializable</strong>: Stored recursively as groups</p></li>
+</ul>
+</section>
+<section id="proxydataset">
+<h2>ProxyDataset<a class="headerlink" href="#proxydataset" title="Link to this heading">#</a></h2>
+<p>In context manager mode, array properties become ProxyDataset instances
+that load data on-demand. This enables efficient access to large files
+without loading everything into memory.</p>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use context manager mode for large arrays</p></li>
+<li><p>Append operations are efficient (no full rewrite)</p></li>
+<li><p>First dimension of datasets is resizable</p></li>
+<li><p>Consider HDF5 chunking for specific access patterns</p></li>
+</ul>
+<p class="rubric">Examples</p>
+<p>Define a Persistable class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">293.15</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Normal construction and saving:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">373.15</span><span class="p">)</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Load from file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Test1&#39;</span>
+</pre></div>
+</div>
+<p>Or use constructor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Test1&#39;</span>
+</pre></div>
+</div>
+<p>Context manager for lazy loading:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="c1"># data is ProxyDataset - not loaded until accessed</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Append data efficiently:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">new</span><span class="p">,</span> <span class="n">values</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Nested objects work automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Trial</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">trial_num</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">experiment</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">trial</span> <span class="o">=</span> <span class="n">Trial</span><span class="p">(</span><span class="n">trial_num</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="n">exp</span><span class="p">)</span>
+<span class="n">trial</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;trial.hdf5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.__init__.html#jangada.serialization.Persistable.__init__" title="jangada.serialization.Persistable.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Initialize a Persistable object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="context-manager-protocol">
+<h2>Context Manager Protocol<a class="headerlink" href="#context-manager-protocol" title="Link to this heading">#</a></h2>
+<p>Methods for interactive file access with lazy loading.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.__enter__.html#jangada.serialization.Persistable.__enter__" title="jangada.serialization.Persistable.__enter__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.__enter__</span></code></a>()</p></td>
+<td><p>Enter context manager mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.__exit__.html#jangada.serialization.Persistable.__exit__" title="jangada.serialization.Persistable.__exit__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.__exit__</span></code></a>(exc_type, exc_val, exc_tb)</p></td>
+<td><p>Exit context manager mode.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="file-i-o-methods">
+<h2>File I/O Methods<a class="headerlink" href="#file-i-o-methods" title="Link to this heading">#</a></h2>
+<p>High-level methods for saving and loading objects.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.save.html#jangada.serialization.Persistable.save" title="jangada.serialization.Persistable.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.save</span></code></a>(path[, overwrite, ...])</p></td>
+<td><p>Save this object to an HDF5 file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.load.html#jangada.serialization.Persistable.load" title="jangada.serialization.Persistable.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.load</span></code></a>(path)</p></td>
+<td><p>Load an object from an HDF5 file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="low-level-serialization">
+<h2>Low-Level Serialization<a class="headerlink" href="#low-level-serialization" title="Link to this heading">#</a></h2>
+<p>Low-level methods for HDF5 data conversion.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.save_serialized_data.html#jangada.serialization.Persistable.save_serialized_data" title="jangada.serialization.Persistable.save_serialized_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.save_serialized_data</span></code></a>(path, data)</p></td>
+<td><p>Save serialized data dictionary to HDF5 file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.Persistable.load_serialized_data.html#jangada.serialization.Persistable.load_serialized_data" title="jangada.serialization.Persistable.load_serialized_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.load_serialized_data</span></code></a>(path)</p></td>
+<td><p>Load serialized data dictionary from HDF5 file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="nested-classes">
+<h2>Nested Classes<a class="headerlink" href="#nested-classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../system/index.html#jangada.system.System.ProxyDataset" title="jangada.serialization.Persistable.ProxyDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Persistable.ProxyDataset</span></code></a>(dataset)</p></td>
+<td><p>Lazy-loading wrapper for HDF5 datasets.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-level-functions">
+<h2>Module-Level Functions<a class="headerlink" href="#module-level-functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.load.html#jangada.serialization.load" title="jangada.serialization.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(path)</p></td>
+<td><p>Module-level convenience function for loading Persistable objects.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Persistable</span></code> extends <a class="reference internal" href="generated/jangada.serialization.Serializable.html#jangada.serialization.Serializable" title="jangada.serialization.Serializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Serializable</span></code></a> with HDF5 file I/O capabilities,
+enabling efficient storage and retrieval of scientific data. It provides both
+full object loading and lazy access via context managers.</p>
+<section id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><strong>Three Access Modes</strong></dt><dd><p>Load entire objects, access data lazily, or use context managers for
+interactive file manipulation.</p>
+</dd>
+<dt><strong>ProxyDataset</strong></dt><dd><p>Lazy-loading wrapper for large arrays - access slices without loading
+entire datasets into memory.</p>
+</dd>
+<dt><strong>Automatic Type Mapping</strong></dt><dd><p>Handles primitives, arrays, collections, and nested objects automatically.</p>
+</dd>
+<dt><strong>Resizable Datasets</strong></dt><dd><p>Append to arrays without rewriting entire files.</p>
+</dd>
+<dt><strong>Metadata Preservation</strong></dt><dd><p>Stores class information and dataset metadata for accurate reconstruction.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="usage-patterns">
+<h2>Usage Patterns<a class="headerlink" href="#usage-patterns" title="Link to this heading">#</a></h2>
+<section id="basic-save-and-load">
+<h3>Basic Save and Load<a class="headerlink" href="#basic-save-and-load" title="Link to this heading">#</a></h3>
+<p>Define a Persistable class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">293.15</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save to file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">373.15</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Load from file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Method 1: Class method</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Method 2: Constructor</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Method 3: Module-level function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jangada.serialization</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="context-manager-for-lazy-loading">
+<h3>Context Manager for Lazy Loading<a class="headerlink" href="#context-manager-for-lazy-loading" title="Link to this heading">#</a></h3>
+<p>For large files, use context manager mode to avoid loading everything:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;large_data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="c1"># exp.data is a ProxyDataset - not loaded yet</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (1000000,)</span>
+
+    <span class="c1"># Load only what you need</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>  <span class="c1"># Loads only 100 elements</span>
+
+    <span class="c1"># Access metadata without loading data</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">temperature</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Read modes:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code>: Read-only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'r+'</span></code>: Read and write</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code>: Write (create new, truncate if exists)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'a'</span></code>: Read/write, create if doesn’t exist</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="modifying-data-efficiently">
+<h3>Modifying Data Efficiently<a class="headerlink" href="#modifying-data-efficiently" title="Link to this heading">#</a></h3>
+<p>Update existing files without full reload:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="c1"># Modify single values</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="mf">99.9</span>
+
+    <span class="c1"># Modify slices</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="c1"># Append new data (efficient - no full rewrite)</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+</pre></div>
+</div>
+</section>
+<section id="incremental-data-collection">
+<h3>Incremental Data Collection<a class="headerlink" href="#incremental-data-collection" title="Link to this heading">#</a></h3>
+<p>Build datasets over time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial creation</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Time Series&quot;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;timeseries.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Append data later</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;timeseries.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+        <span class="n">new_data</span> <span class="o">=</span> <span class="n">collect_measurements</span><span class="p">()</span>
+        <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nested-objects">
+<h3>Nested Objects<a class="headerlink" href="#nested-objects" title="Link to this heading">#</a></h3>
+<p>Hierarchical structures work automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Measurement</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">measurements</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Multi-point&quot;</span><span class="p">,</span>
+    <span class="n">measurements</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">Measurement</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.2</span><span class="p">),</span>
+        <span class="n">Measurement</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2024-01-02&#39;</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="mf">3.4</span><span class="p">),</span>
+        <span class="n">Measurement</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2024-01-03&#39;</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.6</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">exp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load preserves structure</span>
+<span class="n">loaded</span> <span class="o">=</span> <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;experiment.hdf5&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">loaded</span><span class="o">.</span><span class="n">measurements</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">loaded</span><span class="o">.</span><span class="n">measurements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mf">1.2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>ProxyDataset<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Overview<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ProxyDataset</span></code> is a lazy-loading wrapper for HDF5 datasets that provides
+array-like access without loading data into memory until accessed.</p>
+</section>
+<section id="when-to-use">
+<h3>When to Use<a class="headerlink" href="#when-to-use" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt>Use ProxyDataset (context manager mode) when:</dt><dd><ul class="simple">
+<li><p>Working with large arrays (GB-scale)</p></li>
+<li><p>Only need to access parts of the data</p></li>
+<li><p>Want to append data incrementally</p></li>
+<li><p>Memory is limited</p></li>
+</ul>
+</dd>
+<dt>Use full loading (<code class="docutils literal notranslate"><span class="pre">load()</span></code> method) when:</dt><dd><ul class="simple">
+<li><p>Arrays are small (MB-scale)</p></li>
+<li><p>Need full numpy array operations</p></li>
+<li><p>Will access most/all of the data</p></li>
+<li><p>Memory is not a concern</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="supported-operations">
+<h3>Supported Operations<a class="headerlink" href="#supported-operations" title="Link to this heading">#</a></h3>
+<p>ProxyDataset supports:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indexing and slicing</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">proxy</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">chunk</span> <span class="o">=</span> <span class="n">proxy</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">section</span> <span class="o">=</span> <span class="n">proxy</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="c1"># Multidimensional</span>
+
+<span class="c1"># Assignment</span>
+<span class="n">proxy</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">proxy</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_values</span>
+
+<span class="c1"># Appending</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+
+<span class="c1"># Properties</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">dtype</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">ndim</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">size</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">nbytes</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">attrs</span>  <span class="c1"># Metadata</span>
+</pre></div>
+</div>
+<p>Not supported (load data first for these):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arithmetic operations</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">proxy</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># ✗ Not supported</span>
+
+<span class="c1"># Instead:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">proxy</span><span class="p">[:]</span>  <span class="c1"># Load all</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">data</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># ✓ Now works</span>
+
+<span class="c1"># Iteration</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">proxy</span><span class="p">:</span>  <span class="c1"># ✗ Not supported</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Universal functions</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>  <span class="c1"># ✗ Not supported</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">proxy</span><span class="p">[:])</span>  <span class="c1"># ✓ Load first</span>
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p>Efficient slicing of large data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;big_data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="c1"># Dataset is 10GB, only load what you need</span>
+    <span class="n">morning_data</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">measurements</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span>
+    <span class="n">afternoon_data</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">measurements</span><span class="p">[</span><span class="mi">5000</span><span class="p">:</span><span class="mi">6000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Appending to time series:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with initial data</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="n">ts</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;timeseries.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Append over time</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="s1">&#39;timeseries.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ts</span><span class="p">:</span>
+        <span class="n">daily_data</span> <span class="o">=</span> <span class="n">collect_daily_measurements</span><span class="p">()</span>
+        <span class="n">ts</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">daily_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Auto-resizing datasets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="c1"># Dataset currently has 100 elements</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (100,)</span>
+
+    <span class="c1"># Setting beyond bounds auto-resizes</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">200</span><span class="p">]</span> <span class="o">=</span> <span class="mf">99.9</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (201,)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>HDF5 File Structure<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="file-organization">
+<h3>File Organization<a class="headerlink" href="#file-organization" title="Link to this heading">#</a></h3>
+<p>Files are organized hierarchically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>experiment.hdf5
+└── root (group)
+    ├── __class__ = &quot;mymodule.Experiment&quot; (attribute)
+    ├── name = &quot;Test1&quot; (attribute)
+    ├── temperature = 373.15 (attribute)
+    └── data (dataset)
+        ├── __dataset_type__ = &quot;numpy.ndarray&quot; (attribute)
+        └── [array data]
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Type Mapping<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Python types map to HDF5 structures:</p>
+<dl class="simple">
+<dt><strong>Stored as Attributes</strong></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> → <code class="docutils literal notranslate"><span class="pre">'NoneType:None'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> → Direct storage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">complex</span></code> → Direct storage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Path</span></code> → <code class="docutils literal notranslate"><span class="pre">'Path:/absolute/path'</span></code></p></li>
+</ul>
+</dd>
+<dt><strong>Stored as Groups</strong></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code> → Group with <code class="docutils literal notranslate"><span class="pre">__container_type__</span> <span class="pre">=</span> <span class="pre">'list'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> → Group with <code class="docutils literal notranslate"><span class="pre">__container_type__</span> <span class="pre">=</span> <span class="pre">'dict'</span></code></p></li>
+<li><p>Nested <code class="docutils literal notranslate"><span class="pre">Serializable</span></code> → Group with <code class="docutils literal notranslate"><span class="pre">__class__</span></code> attribute</p></li>
+</ul>
+</dd>
+<dt><strong>Stored as Datasets</strong></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> → HDF5 dataset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code> → Int64 dataset + timezone attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code> → Int64 dataset + timezone attribute</p></li>
+<li><p>Custom dataset types → Via register_dataset_type</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="example-structure">
+<h3>Example Structure<a class="headerlink" href="#example-structure" title="Link to this heading">#</a></h3>
+<p>For a complex object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">measurements</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pi&quot;</span><span class="p">:</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]},</span>
+    <span class="n">measurements</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">])</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Produces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>file.hdf5
+└── root/
+    ├── @__class__ = &quot;mymodule.Experiment&quot;
+    ├── @name = &quot;Test&quot;
+    ├── metadata/  (group)
+    │   ├── @__container_type__ = &quot;dict&quot;
+    │   ├── @pi = 3.14
+    │   └── items/  (group)
+    │       ├── @__container_type__ = &quot;list&quot;
+    │       ├── @0 = 1
+    │       ├── @1 = 2
+    │       └── @2 = 3
+    └── measurements  (dataset)
+        ├── @__dataset_type__ = &quot;numpy.ndarray&quot;
+        └── [1.1, 2.2, 3.3]
+</pre></div>
+</div>
+<p>(&#64; denotes attributes, / denotes groups/datasets)</p>
+</section>
+</section>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h2>
+<section id="custom-file-extensions">
+<h3>Custom File Extensions<a class="headerlink" href="#custom-file-extensions" title="Link to this heading">#</a></h3>
+<p>Override the default extension:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyData</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">extension</span> <span class="o">=</span> <span class="s1">&#39;.h5&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyData</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">)</span>  <span class="c1"># Saves as &#39;output.h5&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-files">
+<h3>Multiple Files<a class="headerlink" href="#multiple-files" title="Link to this heading">#</a></h3>
+<p>Save different objects to different files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp1</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Morning&quot;</span><span class="p">)</span>
+<span class="n">exp1</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;morning.hdf5&#39;</span><span class="p">)</span>
+
+<span class="n">exp2</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Afternoon&quot;</span><span class="p">)</span>
+<span class="n">exp2</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;afternoon.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load them back</span>
+<span class="n">experiments</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;morning.hdf5&#39;</span><span class="p">),</span>
+    <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;afternoon.hdf5&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="batch-processing">
+<h3>Batch Processing<a class="headerlink" href="#batch-processing" title="Link to this heading">#</a></h3>
+<p>Process large datasets in chunks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">LargeDataset</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dataset</span><span class="p">:</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">num_chunks</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="n">chunk_size</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_chunks</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">chunk_size</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">chunk_size</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">(</span><span class="n">chunk</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="compression">
+<h3>Compression<a class="headerlink" href="#compression" title="Link to this heading">#</a></h3>
+<p>HDF5 supports compression, but this requires modifying the internal
+<code class="docutils literal notranslate"><span class="pre">_save_data_in_group</span></code> method. Future versions may support:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">CompressedData</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">compression</span> <span class="o">=</span> <span class="s1">&#39;gzip&#39;</span>
+    <span class="n">compression_opts</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>(Not currently implemented - see Future Features in test file)</p>
+</section>
+</section>
+<section id="performance-tips">
+<h2>Performance Tips<a class="headerlink" href="#performance-tips" title="Link to this heading">#</a></h2>
+<section id="memory-efficiency">
+<h3>Memory Efficiency<a class="headerlink" href="#memory-efficiency" title="Link to this heading">#</a></h3>
+<p><strong>Use context manager for large files</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad: Loads entire 10GB array into memory</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;huge_data.hdf5&#39;</span><span class="p">)</span>
+<span class="n">chunk</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+
+<span class="c1"># Good: Loads only requested chunk</span>
+<span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;huge_data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Append instead of rewriting</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad: Loads, modifies, saves entire file</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">)</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">new_values</span><span class="p">])</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">)</span>
+
+<span class="c1"># Good: Appends only new data</span>
+<span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="i-o-performance">
+<h3>I/O Performance<a class="headerlink" href="#i-o-performance" title="Link to this heading">#</a></h3>
+<p><strong>Batch small operations</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad: Many small appends</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+        <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">value</span><span class="p">]))</span>
+
+<span class="c1"># Good: Single append with all data</span>
+<span class="k">with</span> <span class="n">Experiment</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="n">exp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Access contiguous slices</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good: Contiguous access</span>
+<span class="n">chunk</span> <span class="o">=</span> <span class="n">proxy</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">200</span><span class="p">]</span>
+
+<span class="c1"># Slower: Non-contiguous access</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="n">proxy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="storage-efficiency">
+<h3>Storage Efficiency<a class="headerlink" href="#storage-efficiency" title="Link to this heading">#</a></h3>
+<p><strong>Use appropriate dtypes</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wasteful: float64 for integer data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>  <span class="c1"># 24 bytes</span>
+
+<span class="c1"># Efficient: int8 for small integers</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>  <span class="c1"># 3 bytes</span>
+</pre></div>
+</div>
+<p><strong>Mark non-essential data as non-copiable</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Analysis</span><span class="p">(</span><span class="n">Persistable</span><span class="p">):</span>
+    <span class="n">raw_data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Cached result - don&#39;t save</span>
+    <span class="n">_cached</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<section id="current-limitations">
+<h3>Current Limitations<a class="headerlink" href="#current-limitations" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Circular References</strong>
+Circular references will cause infinite recursion during save.</p></li>
+<li><p><strong>Scalar Datasets</strong>
+0-dimensional datasets cannot be resized or appended to.</p></li>
+<li><p><strong>First Dimension Only</strong>
+Datasets can only be resized along axis 0.</p></li>
+<li><p><strong>No Compression Control</strong>
+Cannot currently configure HDF5 compression from Python.</p></li>
+<li><p><strong>No Partial Updates</strong>
+Must save entire object or use context manager.</p></li>
+<li><p><strong>ProxyDataset API Limited</strong>
+Not a full numpy array replacement - supports slicing only.</p></li>
+<li><p><strong>No File Locking</strong>
+Multiple processes accessing same file may cause issues.</p></li>
+<li><p><strong>No Version Migration</strong>
+Changing class structure between saves requires manual handling.</p></li>
+</ol>
+<p>See test_persistable.py header for complete list of limitations and
+future enhancement plans.</p>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<section id="file-not-found">
+<h3>File Not Found<a class="headerlink" href="#file-not-found" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> when loading.</p>
+<p><strong>Solution</strong>: Check path is correct:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="permission-errors">
+<h3>Permission Errors<a class="headerlink" href="#permission-errors" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Cannot write to file.</p>
+<p><strong>Solution</strong>: Check file permissions and that file isn’t open elsewhere:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close any open context managers first</span>
+<span class="k">with</span> <span class="n">exp</span><span class="p">:</span>
+    <span class="k">pass</span>  <span class="c1"># File closes here</span>
+
+<span class="c1"># Now can reopen</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;data.hdf5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="type-errors">
+<h3>Type Errors<a class="headerlink" href="#type-errors" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">instances</span> <span class="pre">of</span> <span class="pre">X</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">saved</span></code></p>
+<p><strong>Solution</strong>: Register the type or make it Serializable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1: Register as primitive</span>
+<span class="n">Serializable</span><span class="o">.</span><span class="n">register_primitive_type</span><span class="p">(</span><span class="n">MyType</span><span class="p">)</span>
+
+<span class="c1"># Option 2: Make it Serializable</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyType</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="corrupted-files">
+<h3>Corrupted Files<a class="headerlink" href="#corrupted-files" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: File won’t load after crash.</p>
+<p><strong>Solution</strong>: HDF5 files can be checked and repaired:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Check file integrity (external tool)
+$ h5debug data.hdf5
+
+# Or in Python
+import h5py
+try:
+    with h5py.File(&#39;data.hdf5&#39;, &#39;r&#39;) as f:
+        pass  # If this works, file is OK
+except Exception as e:
+    print(f&quot;File corrupted: {e}&quot;)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="xref std std-doc">serializable</span> - Parent class</p></li>
+<li><p><span class="xref std std-doc">serializable_property</span> - Property descriptor</p></li>
+<li><p><a class="reference internal" href="type_aliases.html"><span class="doc">Type Aliases</span></a> - Type definitions</p></li>
+<li><p><a class="reference external" href="https://docs.h5py.org/">HDF5 Documentation</a> - h5py reference</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="generated/jangada.serialization.Serializable.dataset_types.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jangada.serialization.Serializable.dataset_types</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="generated/jangada.serialization.Persistable.__init__.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jangada.serialization.Persistable.__init__</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.serialization.Persistable"><code class="docutils literal notranslate"><span class="pre">Persistable</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization">Initialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context-manager-protocol">Context Manager Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o-methods">File I/O Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-serialization">Low-Level Serialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-classes">Nested Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-level-functions">Module-Level Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-patterns">Usage Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-save-and-load">Basic Save and Load</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-manager-for-lazy-loading">Context Manager for Lazy Loading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-data-efficiently">Modifying Data Efficiently</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-data-collection">Incremental Data Collection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-objects">Nested Objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ProxyDataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use">When to Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-operations">Supported Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">HDF5 File Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-organization">File Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Type Mapping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-structure">Example Structure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-usage">Advanced Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-file-extensions">Custom File Extensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-files">Multiple Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-processing">Batch Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compression">Compression</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">Performance Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-efficiency">Memory Efficiency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-o-performance">I/O Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storage-efficiency">Storage Efficiency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-limitations">Current Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-not-found">File Not Found</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permission-errors">Permission Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-errors">Type Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrupted-files">Corrupted Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/contents/api_reference/serialization/Persistable.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Rafael R. L. Benevides, J. M. da Silva.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1245 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Serialization System &#8212; Jangada 0.0.0-dev</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=638d6b7a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=fe683160"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api_reference/serialization/serialization_index';</script>
+    <link rel="icon" href="../../../_static/jangada.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Type Aliases" href="type_aliases.html" />
+    <link rel="prev" title="Serialization (jangada.serialization)" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0.0-dev" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/jangada.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/jangada.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Jangada</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Serialization System</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_aliases.html">Type Aliases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.html">jangada.serialization.Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.html">jangada.serialization.SerializableProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.html">jangada.serialization.SerializableMetatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.get_full_qualified_name.html">jangada.serialization.get_full_qualified_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.check_types.html">jangada.serialization.check_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SerializableProperty.html"><code class="docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__set_name__.html">jangada.serialization.SerializableProperty.__set_name__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__get__.html">jangada.serialization.SerializableProperty.__get__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__set__.html">jangada.serialization.SerializableProperty.__set__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.__delete__.html">jangada.serialization.SerializableProperty.__delete__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.postinitializer.html">jangada.serialization.SerializableProperty.postinitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.default.html">jangada.serialization.SerializableProperty.default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.parser.html">jangada.serialization.SerializableProperty.parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.add_observer.html">jangada.serialization.SerializableProperty.add_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.remove_observer.html">jangada.serialization.SerializableProperty.remove_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.writeonce.html">jangada.serialization.SerializableProperty.writeonce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.copiable.html">jangada.serialization.SerializableProperty.copiable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Serializable.html"><code class="docutils literal notranslate"><span class="pre">Serializable</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__init__.html">jangada.serialization.Serializable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.copy.html">jangada.serialization.Serializable.copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.serialize.html">jangada.serialization.Serializable.serialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.deserialize.html">jangada.serialization.Serializable.deserialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__eq__.html">jangada.serialization.Serializable.__eq__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.__copy__.html">jangada.serialization.Serializable.__copy__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.register_primitive_type.html">jangada.serialization.Serializable.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_primitive_type.html">jangada.serialization.Serializable.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.is_primitive_type.html">jangada.serialization.Serializable.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.register_dataset_type.html">jangada.serialization.Serializable.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.remove_dataset_type.html">jangada.serialization.Serializable.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.is_dataset_type.html">jangada.serialization.Serializable.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.serializable_types.html">jangada.serialization.Serializable.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.primitive_types.html">jangada.serialization.Serializable.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Serializable.dataset_types.html">jangada.serialization.Serializable.dataset_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Persistable.html"><code class="docutils literal notranslate"><span class="pre">Persistable</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__init__.html">jangada.serialization.Persistable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__enter__.html">jangada.serialization.Persistable.__enter__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.__exit__.html">jangada.serialization.Persistable.__exit__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.save.html">jangada.serialization.Persistable.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.load.html">jangada.serialization.Persistable.load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.save_serialized_data.html">jangada.serialization.Persistable.save_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.load_serialized_data.html">jangada.serialization.Persistable.load_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.html">jangada.serialization.Persistable.ProxyDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.load.html">jangada.serialization.load</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ProxyDataset.html"><code class="docutils literal notranslate"><span class="pre">ProxyDataset</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.__getitem__.html">jangada.serialization.Persistable.ProxyDataset.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.__setitem__.html">jangada.serialization.Persistable.ProxyDataset.__setitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.append.html">jangada.serialization.Persistable.ProxyDataset.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.attrs.html">jangada.serialization.Persistable.ProxyDataset.attrs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.shape.html">jangada.serialization.Persistable.ProxyDataset.shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.size.html">jangada.serialization.Persistable.ProxyDataset.size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.dtype.html">jangada.serialization.Persistable.ProxyDataset.dtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.ndim.html">jangada.serialization.Persistable.ProxyDataset.ndim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.Persistable.ProxyDataset.nbytes.html">jangada.serialization.Persistable.ProxyDataset.nbytes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="SerializableMetatype.html"><code class="docutils literal notranslate"><span class="pre">SerializableMetatype</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__new__.html">jangada.serialization.SerializableMetatype.__new__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__getitem__.html">jangada.serialization.SerializableMetatype.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.__contains__.html">jangada.serialization.SerializableMetatype.__contains__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.register_primitive_type.html">jangada.serialization.SerializableMetatype.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.remove_primitive_type.html">jangada.serialization.SerializableMetatype.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.is_primitive_type.html">jangada.serialization.SerializableMetatype.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.register_dataset_type.html">jangada.serialization.SerializableMetatype.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.remove_dataset_type.html">jangada.serialization.SerializableMetatype.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.is_dataset_type.html">jangada.serialization.SerializableMetatype.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.serializable_types.html">jangada.serialization.SerializableMetatype.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.primitive_types.html">jangada.serialization.SerializableMetatype.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.dataset_types.html">jangada.serialization.SerializableMetatype.dataset_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.serializable_properties.html">jangada.serialization.SerializableMetatype.serializable_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.copiable_properties.html">jangada.serialization.SerializableMetatype.copiable_properties</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="type_aliases.html">Type Aliases</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mixin/index.html">Mixins (<code class="docutils literal notranslate"><span class="pre">jangada.mixin</span></code>)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Identifiable.html">jangada.mixin.Identifiable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Taggable.html">jangada.mixin.Taggable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Nameable.html">jangada.mixin.Nameable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Describable.html">jangada.mixin.Describable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Colorable.html">jangada.mixin.Colorable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Activatable.html">jangada.mixin.Activatable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../display/index.html">Terminal Display</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../display/generated/jangada.display.DisplaySettings.html">jangada.display.DisplaySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../display/generated/jangada.display.Displayable.html">jangada.display.Displayable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../system/index.html">Hierarchical System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system/generated/jangada.system.System.html">jangada.system.System</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+        <li class="toctree-l1">
+          <a class="reference internal" href="../../../py-modindex.html">Python Module Index</a>
+        </li>
+  </ul>
+</nav></div>
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Serialization System</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="serialization-system">
+<h1>Serialization System<a class="headerlink" href="#serialization-system" title="Link to this heading">#</a></h1>
+<p>The Jangada serialization system provides a powerful framework for converting
+Python objects to dictionary structures suitable for persistence in HDF5 files,
+JSON, or other storage formats.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The serialization system consists of three main components:</p>
+<ol class="arabic simple">
+<li><p><strong>SerializableProperty</strong> - Descriptor for properties that can be serialized</p></li>
+<li><p><strong>Serializable</strong> - Base class for objects that can be serialized</p></li>
+<li><p><strong>SerializableMetatype</strong> - Metaclass that enables automatic registration</p></li>
+</ol>
+<p>Together, these provide automatic serialization with minimal boilerplate.</p>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<p>Define a serializable class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jangada.serialization</span><span class="w"> </span><span class="kn">import</span> <span class="n">Serializable</span><span class="p">,</span> <span class="n">SerializableProperty</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Experiment</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">293.15</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create and serialize:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test1&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">373.15</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Deserialize:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">restored</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># &#39;Test1&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<section id="automatic-registration">
+<h3>Automatic Registration<a class="headerlink" href="#automatic-registration" title="Link to this heading">#</a></h3>
+<p>Classes are automatically registered when defined - no manual setup required:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">prop</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Automatically registered!</span>
+<span class="k">assert</span> <span class="s1">&#39;mymodule.MyClass&#39;</span> <span class="ow">in</span> <span class="n">Serializable</span>
+</pre></div>
+</div>
+</section>
+<section id="nested-objects">
+<h3>Nested Objects<a class="headerlink" href="#nested-objects" title="Link to this heading">#</a></h3>
+<p>Serialization handles nested objects recursively:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Inner</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Outer</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">inner</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Outer</span><span class="p">(</span><span class="n">inner</span><span class="o">=</span><span class="n">Inner</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">42</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">restored</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</section>
+<section id="collections-support">
+<h3>Collections Support<a class="headerlink" href="#collections-support" title="Link to this heading">#</a></h3>
+<p>Lists, dicts, tuples, and sets work automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Exp1&quot;</span><span class="p">),</span>
+    <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Exp2&quot;</span><span class="p">),</span>
+    <span class="n">Experiment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Exp3&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+<span class="n">restored</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="property-features">
+<h3>Property Features<a class="headerlink" href="#property-features" title="Link to this heading">#</a></h3>
+<p>SerializableProperty provides rich functionality:</p>
+<ul class="simple">
+<li><p><strong>Defaults</strong>: Static or factory-generated default values</p></li>
+<li><p><strong>Parsers</strong>: Validate and transform values</p></li>
+<li><p><strong>Observers</strong>: Track changes with callbacks</p></li>
+<li><p><strong>Post-initializers</strong>: Lazy setup after first access</p></li>
+<li><p><strong>Write-once</strong>: Immutable properties</p></li>
+<li><p><strong>Copiable flag</strong>: Control what gets persisted</p></li>
+</ul>
+<p>See <span class="xref std std-doc">serializable_property</span> for full details.</p>
+</section>
+<section id="type-system">
+<h3>Type System<a class="headerlink" href="#type-system" title="Link to this heading">#</a></h3>
+<p>Register primitive types (serialized as-is):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
+<span class="n">Serializable</span><span class="o">.</span><span class="n">register_primitive_type</span><span class="p">(</span><span class="n">Decimal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Register dataset types (converted to/from arrays):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">disassemble</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="p">{}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">assemble</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">CustomType</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">Serializable</span><span class="o">.</span><span class="n">register_dataset_type</span><span class="p">(</span>
+    <span class="n">CustomType</span><span class="p">,</span>
+    <span class="n">disassemble</span><span class="o">=</span><span class="n">disassemble</span><span class="p">,</span>
+    <span class="n">assemble</span><span class="o">=</span><span class="n">assemble</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="built-in-support">
+<h3>Built-in Support<a class="headerlink" href="#built-in-support" title="Link to this heading">#</a></h3>
+<p>These types work out of the box:</p>
+<dl class="simple">
+<dt><strong>Primitives</strong>:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">complex</span></code> (via <code class="docutils literal notranslate"><span class="pre">numbers.Number</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code></p></li>
+</ul>
+</dd>
+<dt><strong>Dataset Types</strong>:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+digraph serialization {
+    rankdir=LR;
+    node [shape=box];
+
+    Property [label=&quot;SerializableProperty\n(Descriptor)&quot;];
+    Meta [label=&quot;SerializableMetatype\n(Metaclass)&quot;];
+    Base [label=&quot;Serializable\n(Base Class)&quot;];
+    User [label=&quot;User Classes&quot;];
+
+    Meta -&gt; Base [label=&quot;creates&quot;];
+    Meta -&gt; User [label=&quot;registers&quot;];
+    Base -&gt; User [label=&quot;inherited by&quot;];
+    Property -&gt; User [label=&quot;used in&quot;];
+}<p>The metaclass automatically:</p>
+<ol class="arabic simple">
+<li><p>Registers each subclass in a global registry</p></li>
+<li><p>Discovers SerializableProperty descriptors via MRO walk</p></li>
+<li><p>Enables subscript access (<code class="docutils literal notranslate"><span class="pre">Serializable['module.Class']</span></code>)</p></li>
+<li><p>Manages primitive and dataset type registries</p></li>
+</ol>
+</section>
+<section id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="type_aliases.html">Type Aliases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="type_aliases.html#type-variable">Type Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_aliases.html#callable-type-aliases">Callable Type Aliases</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="core-classes">
+<h3>Core Classes<a class="headerlink" href="#core-classes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.Serializable.html#jangada.serialization.Serializable" title="jangada.serialization.Serializable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Serializable</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Base class for objects that can be serialized to/from dictionaries.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/jangada.serialization.SerializableProperty.html#jangada.serialization.SerializableProperty" title="jangada.serialization.SerializableProperty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a>([postinitializer, ...])</p></td>
+<td><p>A descriptor for properties that support defaults, parsing, observation, and post-initialization hooks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/jangada.serialization.SerializableMetatype.html#jangada.serialization.SerializableMetatype" title="jangada.serialization.SerializableMetatype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SerializableMetatype</span></code></a>(name, bases, namespace, ...)</p></td>
+<td><p>Metaclass for automatic registration and introspection of Serializable classes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="helper-functions">
+<h3>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="helpers.html#jangada.serialization.get_full_qualified_name" title="jangada.serialization.get_full_qualified_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_full_qualified_name</span></code></a>(cls)</p></td>
+<td><p>Get the fully qualified name of a class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="helpers.html#jangada.serialization.check_types" title="jangada.serialization.check_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_types</span></code></a>(obj, types[, can_be_none, ...])</p></td>
+<td><p>Check if an object is an instance of the specified type(s).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h2>
+<section id="scientific-data-persistence">
+<h3>Scientific Data Persistence<a class="headerlink" href="#scientific-data-persistence" title="Link to this heading">#</a></h3>
+<p>Store experimental data with metadata:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Measurement</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">pressure</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">readings</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">measurement</span> <span class="o">=</span> <span class="n">Measurement</span><span class="p">(</span>
+    <span class="n">timestamp</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2024-01-15 12:30:00&#39;</span><span class="p">),</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">298.15</span><span class="p">,</span>
+    <span class="n">pressure</span><span class="o">=</span><span class="mf">101.3</span><span class="p">,</span>
+    <span class="n">readings</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">])</span>
+<span class="p">)</span>
+
+<span class="c1"># Save to HDF5 (simplified)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">measurement</span><span class="p">)</span>
+<span class="c1"># ... write data to HDF5 ...</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration-management">
+<h3>Configuration Management<a class="headerlink" href="#configuration-management" title="Link to this heading">#</a></h3>
+<p>Serialize configuration objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AppConfig</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">writeonce</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">debug</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">AppConfig</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;secret123&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save config</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="c1"># ... save to JSON or YAML ...</span>
+
+<span class="c1"># Load config</span>
+<span class="n">loaded</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="system-subsystem-hierarchies">
+<h3>System/Subsystem Hierarchies<a class="headerlink" href="#system-subsystem-hierarchies" title="Link to this heading">#</a></h3>
+<p>Model complex systems with nested objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">sensor_id</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">calibration</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Subsystem</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">sensors</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">System</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">subsystems</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Observatory&quot;</span><span class="p">,</span>
+    <span class="n">subsystems</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">Subsystem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Telescope&quot;</span><span class="p">,</span> <span class="n">sensors</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">]),</span>
+        <span class="n">Subsystem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Spectrometer&quot;</span><span class="p">,</span> <span class="n">sensors</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="data-pipelines">
+<h3>Data Pipelines<a class="headerlink" href="#data-pipelines" title="Link to this heading">#</a></h3>
+<p>Serialize intermediate results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ProcessingStep</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">input_data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">output_data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">parameters</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">step</span> <span class="o">=</span> <span class="n">ProcessingStep</span><span class="p">(</span>
+    <span class="n">input_data</span><span class="o">=</span><span class="n">raw_data</span><span class="p">,</span>
+    <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;threshold&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Process...</span>
+<span class="n">step</span><span class="o">.</span><span class="n">output_data</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">input_data</span><span class="p">,</span> <span class="n">step</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+<span class="n">step</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">expensive_computation</span><span class="p">()</span>
+
+<span class="c1"># Save (cache is excluded because copiable=False)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">is_copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="design-patterns">
+<h2>Design Patterns<a class="headerlink" href="#design-patterns" title="Link to this heading">#</a></h2>
+<section id="factory-pattern-with-defaults">
+<h3>Factory Pattern with Defaults<a class="headerlink" href="#factory-pattern-with-defaults" title="Link to this heading">#</a></h3>
+<p>Use callable defaults as factories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DataContainer</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">()</span>
+
+    <span class="nd">@data</span><span class="o">.</span><span class="n">default</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Factory creates new instance for each object</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+<span class="n">c1</span> <span class="o">=</span> <span class="n">DataContainer</span><span class="p">()</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">DataContainer</span><span class="p">()</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># c2.data is still [] (separate list)</span>
+</pre></div>
+</div>
+</section>
+<section id="observer-pattern">
+<h3>Observer Pattern<a class="headerlink" href="#observer-pattern" title="Link to this heading">#</a></h3>
+<p>Track property changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Observable</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="nd">@value</span><span class="o">.</span><span class="n">add_observer</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value changed: </span><span class="si">{</span><span class="n">old</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Observable</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># Prints: Value changed: 0 -&gt; 42</span>
+</pre></div>
+</div>
+</section>
+<section id="lazy-initialization">
+<h3>Lazy Initialization<a class="headerlink" href="#lazy-initialization" title="Link to this heading">#</a></h3>
+<p>Defer expensive setup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LazyLoader</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@data</span><span class="o">.</span><span class="n">postinitializer</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">load_expensive_data</span><span class="p">()</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">LazyLoader</span><span class="p">()</span>
+<span class="c1"># Data not loaded yet...</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># First access triggers loading</span>
+</pre></div>
+</div>
+</section>
+<section id="validation-pattern">
+<h3>Validation Pattern<a class="headerlink" href="#validation-pattern" title="Link to this heading">#</a></h3>
+<p>Ensure data integrity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ValidatedData</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="nd">@temperature</span><span class="o">.</span><span class="n">parser</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperature cannot be negative&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+</pre></div>
+</div>
+</section>
+<section id="immutable-configuration">
+<h3>Immutable Configuration<a class="headerlink" href="#immutable-configuration" title="Link to this heading">#</a></h3>
+<p>Prevent accidental changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="n">api_endpoint</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">writeonce</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">api_key</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">writeonce</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+    <span class="n">api_endpoint</span><span class="o">=</span><span class="s2">&quot;https://api.example.com&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;secret&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Cannot change after first set</span>
+<span class="c1"># config.api_key = &quot;different&quot;  # Raises AttributeError</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<section id="property-naming">
+<h3>Property Naming<a class="headerlink" href="#property-naming" title="Link to this heading">#</a></h3>
+<p>Use descriptive names that indicate purpose:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good</span>
+<span class="n">measurement_timestamp</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">()</span>
+<span class="n">calibration_coefficients</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">()</span>
+
+<span class="c1"># Avoid</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="default-values">
+<h3>Default Values<a class="headerlink" href="#default-values" title="Link to this heading">#</a></h3>
+<p>Provide sensible defaults:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good - clear default behavior</span>
+<span class="n">enabled</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">retry_count</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Use factories for mutables</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="p">[])</span>
+</pre></div>
+</div>
+</section>
+<section id="copiable-flag">
+<h3>Copiable Flag<a class="headerlink" href="#copiable-flag" title="Link to this heading">#</a></h3>
+<p>Mark cached/derived data as non-copiable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data to persist</span>
+<span class="n">input_array</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Cached computation (don&#39;t persist)</span>
+<span class="n">_cached_fft</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copiable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parsers">
+<h3>Parsers<a class="headerlink" href="#parsers" title="Link to this heading">#</a></h3>
+<p>Keep parsers simple and focused:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@property</span><span class="o">.</span><span class="n">parser</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Single responsibility: type conversion</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># Not this:</span>
+<span class="nd">@property</span><span class="o">.</span><span class="n">parser</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Too much: validation + transformation + side effects</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
+    <span class="n">transformed</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">other_property</span> <span class="o">=</span> <span class="n">side_effect</span><span class="p">(</span><span class="n">transformed</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">transformed</span>
+</pre></div>
+</div>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h3>
+<p>Document non-obvious behavior:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
+    <span class="c1"># Document units, valid ranges, special values</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">293.15</span><span class="p">)</span>  <span class="c1"># Kelvin</span>
+
+    <span class="c1"># Document when parsers/observers run</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">SerializableProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># None triggers lazy load</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="performance-considerations">
+<h2>Performance Considerations<a class="headerlink" href="#performance-considerations" title="Link to this heading">#</a></h2>
+<section id="memory-usage">
+<h3>Memory Usage<a class="headerlink" href="#memory-usage" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Properties use mangled instance attributes (<code class="docutils literal notranslate"><span class="pre">_serializable_property__name</span></code>)</p></li>
+<li><p>Class-level registries are shared, not per-instance</p></li>
+<li><p>Large arrays should use dataset types (avoid copies)</p></li>
+</ul>
+</section>
+<section id="serialization-speed">
+<h3>Serialization Speed<a class="headerlink" href="#serialization-speed" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Recursive serialization is depth-first</p></li>
+<li><p>No cycles detection (will hang on circular references)</p></li>
+<li><p>Primitive types are fastest (no transformation)</p></li>
+</ul>
+</section>
+<section id="deserialization-speed">
+<h3>Deserialization Speed<a class="headerlink" href="#deserialization-speed" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Class lookup is O(1) via dict</p></li>
+<li><p>Property setting triggers parsers/observers</p></li>
+<li><p>Large object graphs may be slow if many observers</p></li>
+</ul>
+</section>
+<section id="optimization-tips">
+<h3>Optimization Tips<a class="headerlink" href="#optimization-tips" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Use copiable=False for non-essential data</p></li>
+<li><p>Avoid expensive observers during deserialization</p></li>
+<li><p>Register custom types as primitives if possible</p></li>
+<li><p>Use dataset types for large arrays</p></li>
+</ol>
+</section>
+</section>
+<section id="limitations-and-gotchas">
+<h2>Limitations and Gotchas<a class="headerlink" href="#limitations-and-gotchas" title="Link to this heading">#</a></h2>
+<section id="circular-references">
+<h3>Circular References<a class="headerlink" href="#circular-references" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Circular references cause infinite recursion:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
+<span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span>
+<span class="n">Serializable</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>  <span class="c1"># Hangs!</span>
+</pre></div>
+</div>
+<p><strong>Solution</strong>: Restructure to avoid cycles, or track visited objects manually.</p>
+</section>
+<section id="thread-safety">
+<h3>Thread Safety<a class="headerlink" href="#thread-safety" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Global registries not thread-safe.</p>
+<p><strong>Solution</strong>: Register all types at startup (single-threaded) before spawning threads.</p>
+</section>
+<section id="property-initialization-order">
+<h3>Property Initialization Order<a class="headerlink" href="#property-initialization-order" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Properties set during <code class="docutils literal notranslate"><span class="pre">__init__</span></code> may fire observers before object fully initialized.</p>
+<p><strong>Solution</strong>: Use post-initializers for setup that depends on multiple properties.</p>
+</section>
+<section id="unknown-classes">
+<h3>Unknown Classes<a class="headerlink" href="#unknown-classes" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Deserializing data for unimported classes creates generic types.</p>
+<p><strong>Solution</strong>: Import all Serializable classes before deserialization.</p>
+</section>
+<section id="type-changes">
+<h3>Type Changes<a class="headerlink" href="#type-changes" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Changing property types between serialization/deserialization may fail.</p>
+<p><strong>Solution</strong>: Use parsers to handle type evolution, or implement version migration.</p>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<section id="import-errors">
+<h3>Import Errors<a class="headerlink" href="#import-errors" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> during deserialization - class not found.</p>
+<p><strong>Solution</strong>: Ensure the class’s module is imported before deserializing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mymodule</span>  <span class="c1"># Imports and registers MyClass</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Serializable</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Now works</span>
+</pre></div>
+</div>
+</section>
+<section id="type-errors">
+<h3>Type Errors<a class="headerlink" href="#type-errors" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">No</span> <span class="pre">serialisation</span> <span class="pre">process</span> <span class="pre">implemented</span> <span class="pre">for</span> <span class="pre">...</span></code></p>
+<p><strong>Solution</strong>: Register the type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Serializable</span><span class="o">.</span><span class="n">register_primitive_type</span><span class="p">(</span><span class="n">MyCustomType</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="validation-errors">
+<h3>Validation Errors<a class="headerlink" href="#validation-errors" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Parser raises exception during deserialization.</p>
+<p><strong>Solution</strong>: Update parser to handle old data formats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@prop</span><span class="o">.</span><span class="n">parser</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="c1"># Handle both old and new formats</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">OldType</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">convert_to_new_type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">validate</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="xref std std-doc">../hdf5/persistence</span> - Using Serializable with HDF5 storage</p></li>
+<li><p><span class="xref std std-doc">../examples/index</span> - Complete examples and tutorials</p></li>
+<li><p><span class="xref std std-doc">../api/index</span> - Full API reference</p></li>
+</ul>
+</section>
+<section id="indices-and-tables">
+<h2>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="type_aliases.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Type Aliases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-registration">Automatic Registration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-objects">Nested Objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-support">Collections Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property-features">Property Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-system">Type System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-support">Built-in Support</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-reference">API Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-classes">Core Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-functions">Helper Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-data-persistence">Scientific Data Persistence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-management">Configuration Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-subsystem-hierarchies">System/Subsystem Hierarchies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pipelines">Data Pipelines</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-patterns">Design Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factory-pattern-with-defaults">Factory Pattern with Defaults</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observer-pattern">Observer Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lazy-initialization">Lazy Initialization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-pattern">Validation Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#immutable-configuration">Immutable Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property-naming">Property Naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-values">Default Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copiable-flag">Copiable Flag</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parsers">Parsers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-considerations">Performance Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-usage">Memory Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serialization-speed">Serialization Speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deserialization-speed">Deserialization Speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-tips">Optimization Tips</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-gotchas">Limitations and Gotchas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circular-references">Circular References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-safety">Thread Safety</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property-initialization-order">Property Initialization Order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-classes">Unknown Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-changes">Type Changes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-errors">Import Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-errors">Type Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-errors">Validation Errors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and Tables</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/contents/api_reference/serialization/serialization_index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Rafael R. L. Benevides, J. M. da Silva.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

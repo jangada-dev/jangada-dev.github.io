@@ -1,0 +1,2022 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Terminal Display &#8212; Jangada 0.0.0-dev</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=638d6b7a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=fe683160"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api_reference/display/index';</script>
+    <link rel="icon" href="../../../_static/jangada.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="jangada.display.DisplaySettings" href="generated/jangada.display.DisplaySettings.html" />
+    <link rel="prev" title="jangada.mixin.Activatable" href="../mixin/generated/jangada.mixin.Activatable.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0.0-dev" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/jangada.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/jangada.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Jangada</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jangada-dev/jangada" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/jangada" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../serialization/index.html">Serialization (<code class="docutils literal notranslate"><span class="pre">jangada.serialization</span></code>)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../serialization/serialization_index.html">Serialization System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/type_aliases.html">Type Aliases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.html">jangada.serialization.Serializable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.html">jangada.serialization.SerializableProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.html">jangada.serialization.SerializableMetatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.get_full_qualified_name.html">jangada.serialization.get_full_qualified_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.check_types.html">jangada.serialization.check_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../serialization/SerializableProperty.html"><code class="docutils literal notranslate"><span class="pre">SerializableProperty</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.__set_name__.html">jangada.serialization.SerializableProperty.__set_name__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.__get__.html">jangada.serialization.SerializableProperty.__get__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.__set__.html">jangada.serialization.SerializableProperty.__set__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.__delete__.html">jangada.serialization.SerializableProperty.__delete__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.postinitializer.html">jangada.serialization.SerializableProperty.postinitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.default.html">jangada.serialization.SerializableProperty.default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.parser.html">jangada.serialization.SerializableProperty.parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.add_observer.html">jangada.serialization.SerializableProperty.add_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.remove_observer.html">jangada.serialization.SerializableProperty.remove_observer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.writeonce.html">jangada.serialization.SerializableProperty.writeonce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableProperty.copiable.html">jangada.serialization.SerializableProperty.copiable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../serialization/Serializable.html"><code class="docutils literal notranslate"><span class="pre">Serializable</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.__init__.html">jangada.serialization.Serializable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.copy.html">jangada.serialization.Serializable.copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.serialize.html">jangada.serialization.Serializable.serialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.deserialize.html">jangada.serialization.Serializable.deserialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.__eq__.html">jangada.serialization.Serializable.__eq__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.__copy__.html">jangada.serialization.Serializable.__copy__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.register_primitive_type.html">jangada.serialization.Serializable.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.remove_primitive_type.html">jangada.serialization.Serializable.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.is_primitive_type.html">jangada.serialization.Serializable.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.register_dataset_type.html">jangada.serialization.Serializable.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.remove_dataset_type.html">jangada.serialization.Serializable.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.is_dataset_type.html">jangada.serialization.Serializable.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.serializable_types.html">jangada.serialization.Serializable.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.primitive_types.html">jangada.serialization.Serializable.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Serializable.dataset_types.html">jangada.serialization.Serializable.dataset_types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../serialization/Persistable.html"><code class="docutils literal notranslate"><span class="pre">Persistable</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.__init__.html">jangada.serialization.Persistable.__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.__enter__.html">jangada.serialization.Persistable.__enter__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.__exit__.html">jangada.serialization.Persistable.__exit__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.save.html">jangada.serialization.Persistable.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.load.html">jangada.serialization.Persistable.load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.save_serialized_data.html">jangada.serialization.Persistable.save_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.load_serialized_data.html">jangada.serialization.Persistable.load_serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.html">jangada.serialization.Persistable.ProxyDataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.load.html">jangada.serialization.load</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../serialization/ProxyDataset.html"><code class="docutils literal notranslate"><span class="pre">ProxyDataset</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.__getitem__.html">jangada.serialization.Persistable.ProxyDataset.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.__setitem__.html">jangada.serialization.Persistable.ProxyDataset.__setitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.append.html">jangada.serialization.Persistable.ProxyDataset.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.attrs.html">jangada.serialization.Persistable.ProxyDataset.attrs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.shape.html">jangada.serialization.Persistable.ProxyDataset.shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.size.html">jangada.serialization.Persistable.ProxyDataset.size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.dtype.html">jangada.serialization.Persistable.ProxyDataset.dtype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.ndim.html">jangada.serialization.Persistable.ProxyDataset.ndim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.Persistable.ProxyDataset.nbytes.html">jangada.serialization.Persistable.ProxyDataset.nbytes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../serialization/SerializableMetatype.html"><code class="docutils literal notranslate"><span class="pre">SerializableMetatype</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.__new__.html">jangada.serialization.SerializableMetatype.__new__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.__getitem__.html">jangada.serialization.SerializableMetatype.__getitem__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.__contains__.html">jangada.serialization.SerializableMetatype.__contains__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.register_primitive_type.html">jangada.serialization.SerializableMetatype.register_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.remove_primitive_type.html">jangada.serialization.SerializableMetatype.remove_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.is_primitive_type.html">jangada.serialization.SerializableMetatype.is_primitive_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.register_dataset_type.html">jangada.serialization.SerializableMetatype.register_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.remove_dataset_type.html">jangada.serialization.SerializableMetatype.remove_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.is_dataset_type.html">jangada.serialization.SerializableMetatype.is_dataset_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.serializable_types.html">jangada.serialization.SerializableMetatype.serializable_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.primitive_types.html">jangada.serialization.SerializableMetatype.primitive_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.dataset_types.html">jangada.serialization.SerializableMetatype.dataset_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.serializable_properties.html">jangada.serialization.SerializableMetatype.serializable_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../serialization/generated/jangada.serialization.SerializableMetatype.copiable_properties.html">jangada.serialization.SerializableMetatype.copiable_properties</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../serialization/type_aliases.html">Type Aliases</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mixin/index.html">Mixins (<code class="docutils literal notranslate"><span class="pre">jangada.mixin</span></code>)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Identifiable.html">jangada.mixin.Identifiable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Taggable.html">jangada.mixin.Taggable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Nameable.html">jangada.mixin.Nameable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Describable.html">jangada.mixin.Describable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Colorable.html">jangada.mixin.Colorable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixin/generated/jangada.mixin.Activatable.html">jangada.mixin.Activatable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Terminal Display</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/jangada.display.DisplaySettings.html">jangada.display.DisplaySettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/jangada.display.Displayable.html">jangada.display.Displayable</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../system/index.html">Hierarchical System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system/generated/jangada.system.System.html">jangada.system.System</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+        <li class="toctree-l1">
+          <a class="reference internal" href="../../../py-modindex.html">Python Module Index</a>
+        </li>
+  </ul>
+</nav></div>
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Terminal Display</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="terminal-display">
+<h1>Terminal Display<a class="headerlink" href="#terminal-display" title="Link to this heading">#</a></h1>
+<p>The display module provides a framework for creating beautiful, styled terminal
+output using the Rich library. Objects can define their visual representation
+through customizable panels, tables, and forms with persistent theme support.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The display module provides two main classes:</p>
+<ul class="simple">
+<li><p><strong>DisplaySettings</strong> - Persistent configuration for all display styling</p></li>
+<li><p><strong>Displayable</strong> - Abstract base class for objects with Rich terminal display</p></li>
+</ul>
+<p>Key features:</p>
+<ul class="simple">
+<li><p>Rich library integration for beautiful terminal output</p></li>
+<li><p>Customizable themes (colors, styles, layouts)</p></li>
+<li><p>Automatic table formatting with smart alignment</p></li>
+<li><p>Form-style key-value displays</p></li>
+<li><p>HTML/SVG export capabilities</p></li>
+<li><p>Persistent settings (save/load themes)</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#jangada.display.DisplaySettings" title="jangada.display.DisplaySettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplaySettings</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Persistent configuration for terminal display formatting.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#jangada.display.Displayable" title="jangada.display.Displayable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Displayable</span></code></a>()</p></td>
+<td><p>Abstract base for objects with Rich terminal display.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<p>Basic displayable object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jangada.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Displayable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Text</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temperature</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensor: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Temperature: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2">°C&quot;</span>
+
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Temp-01&quot;</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span>  <span class="c1"># Displays formatted panel</span>
+</pre></div>
+</div>
+<p>Table display:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jangada.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Displayable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Text</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DataView</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Data Table&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+<span class="n">view</span> <span class="o">=</span> <span class="n">DataView</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Custom styling:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Temp-01&quot;</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">)</span>
+<span class="n">sensor</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="n">sensor</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">console_width</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save theme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;magenta&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">table_header_style</span> <span class="o">=</span> <span class="s1">&#39;bold white&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_theme.disp&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load later</span>
+<span class="n">sensor</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;my_theme.disp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="class-reference">
+<h2>Class Reference<a class="headerlink" href="#class-reference" title="Link to this heading">#</a></h2>
+<section id="displaysettings">
+<h3>DisplaySettings<a class="headerlink" href="#displaysettings" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="jangada.display.DisplaySettings">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jangada.display.</span></span><span class="sig-name descname"><span class="pre">DisplaySettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jangada.display.DisplaySettings" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../serialization/Persistable.html#jangada.serialization.Persistable" title="jangada.serialization.Persistable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Persistable</span></code></a></p>
+<p>Persistent configuration for terminal display formatting.</p>
+<p>DisplaySettings provides centralized control over all visual aspects of
+terminal output, including console width, panel styling, and table
+formatting. Settings can be customized per-instance and saved as reusable
+themes.</p>
+<p>All styling properties use Rich’s style syntax, supporting colors,
+attributes (bold, italic), and combinations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>console_width</strong><span class="classifier">int</span></dt><dd><p>Maximum console output width in characters. Default 150.</p>
+</dd>
+<dt><strong>property_style</strong><span class="classifier">str</span></dt><dd><p>Style for property labels in forms. Default ‘bold bright_yellow’.</p>
+</dd>
+<dt><strong>panel_border_style</strong><span class="classifier">str</span></dt><dd><p>Style for panel borders. Default ‘bright_cyan’.</p>
+</dd>
+<dt><strong>panel_box</strong><span class="classifier">str</span></dt><dd><p>Box style name from rich.box. Default ‘ROUNDED’.</p>
+</dd>
+<dt><strong>panel_title_align</strong><span class="classifier">str</span></dt><dd><p>Panel title alignment. Default ‘center’.</p>
+</dd>
+<dt><strong>table_index_style</strong><span class="classifier">str or None</span></dt><dd><p>Style for table index column. Default None.</p>
+</dd>
+<dt><strong>table_header_style</strong><span class="classifier">str or None</span></dt><dd><p>Style for table headers. Default ‘bold bright_yellow’.</p>
+</dd>
+<dt><strong>table_round_floats</strong><span class="classifier">int or None</span></dt><dd><p>Decimal places for float rounding. Default None.</p>
+</dd>
+<dt><strong>table_spacing</strong><span class="classifier">int</span></dt><dd><p>Column spacing in characters. Default 4.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#jangada.display.Displayable" title="jangada.display.Displayable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Displayable</span></code></a></dt><dd><p>Uses DisplaySettings for formatting</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>As a Persistable subclass, DisplaySettings can be saved to HDF5 files
+with the .disp extension, making themes portable and shareable.</p>
+<p>Rich style strings support:
+- Colors: ‘red’, ‘blue’, ‘bright_yellow’, ‘#FF0000’
+- Modifiers: ‘bold’, ‘italic’, ‘underline’, ‘dim’
+- Combinations: ‘bold red’, ‘italic bright_cyan’</p>
+<p class="rubric">Examples</p>
+<p>Create and customize settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">console_width</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">table_spacing</span> <span class="o">=</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<p>Save as theme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_theme.disp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Load theme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;my_theme.disp&#39;</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">settings</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="displayable">
+<h3>Displayable<a class="headerlink" href="#displayable" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="jangada.display.Displayable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jangada.display.</span></span><span class="sig-name descname"><span class="pre">Displayable</span></span><a class="headerlink" href="#jangada.display.Displayable" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<p>Abstract base for objects with Rich terminal display.</p>
+<p>Displayable provides a framework for beautiful terminal output via Rich
+panels. Subclasses define content through abstract methods _title() and
+_content(), while the framework handles formatting, styling, and rendering.</p>
+<p>Integrates with Rich’s protocol (__rich__) and provides string output
+(__str__), making objects displayable in both Rich-aware and standard
+contexts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>display_settings</strong><span class="classifier">DisplaySettings</span></dt><dd><p>Configuration for display formatting. Auto-created per instance via
+factory, allowing independent customization.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#jangada.display.DisplaySettings" title="jangada.display.DisplaySettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplaySettings</span></code></a></dt><dd><p>Configuration class</p>
+</dd>
+<dt><a class="reference internal" href="#jangada.display.Displayable.format_as_form" title="jangada.display.Displayable.format_as_form"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_as_form</span></code></a></dt><dd><p>Helper for key-value displays</p>
+</dd>
+<dt><a class="reference internal" href="#jangada.display.Displayable.format_as_table" title="jangada.display.Displayable.format_as_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_as_table</span></code></a></dt><dd><p>Helper for DataFrame displays</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Uses template method pattern: framework provides structure, subclasses
+provide content. This ensures consistent styling across all displays.</p>
+<p class="rubric">Examples</p>
+<p>Simple implementation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensor: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Temperature: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">temp</span><span class="si">}</span><span class="s2">°C&quot;</span>
+</pre></div>
+</div>
+<p>With table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Report</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Data Report&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Custom styling:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Temp-01&quot;</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jangada.display.Displayable.display_settings">
+<span class="sig-name descname"><span class="pre">display_settings</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#jangada.display.DisplaySettings" title="jangada.display.DisplaySettings"><span class="pre">DisplaySettings</span></a></span><a class="headerlink" href="#jangada.display.Displayable.display_settings" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for display formatting and styling.</p>
+<p>Provides access to all visual customization options for this object’s
+terminal display. Each instance receives its own DisplaySettings object
+by default (via factory), allowing per-object customization without
+affecting other instances.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#jangada.display.DisplaySettings" title="jangada.display.DisplaySettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DisplaySettings</span></code></a></dt><dd><p>The settings class with all options</p>
+</dd>
+<dt><a class="reference internal" href="#jangada.display.Displayable.format_as_form" title="jangada.display.Displayable.format_as_form"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_as_form</span></code></a></dt><dd><p>Uses property_style setting</p>
+</dd>
+<dt><a class="reference internal" href="#jangada.display.Displayable.format_as_table" title="jangada.display.Displayable.format_as_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_as_table</span></code></a></dt><dd><p>Uses table_* settings</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<dl>
+<dt><strong>Factory Behavior</strong></dt><dd><p>The display_settings property uses a factory function to create a new
+DisplaySettings instance for each Displayable object. This ensures:
+- Each instance has independent settings by default
+- No unexpected sharing between objects
+- Settings can be customized per-object without side effects</p>
+</dd>
+<dt><strong>Sharing Settings</strong></dt><dd><p>To share settings across multiple objects, explicitly assign the same
+DisplaySettings instance:</p>
+<blockquote>
+<div><p>shared_settings = DisplaySettings()
+obj1.display_settings = shared_settings
+obj2.display_settings = shared_settings</p>
+</div></blockquote>
+<p>Now changes to shared_settings affect both objects.</p>
+</dd>
+<dt><strong>Persistence</strong></dt><dd><p>DisplaySettings is Persistable, so settings can be:
+- Saved to .disp files (themes)
+- Loaded from saved themes
+- Versioned and shared across projects
+- Used to maintain consistent styling</p>
+</dd>
+<dt><strong>Immediate Effect</strong></dt><dd><p>Changes to display_settings take effect immediately on the next render:
+- print(obj) uses current settings
+- obj.__rich__() uses current settings
+- obj.to_html() uses current settings</p>
+<p>No need to “apply” or “refresh” - just change and use.</p>
+</dd>
+<dt><strong>Available Settings</strong></dt><dd><p>See DisplaySettings documentation for all available options:
+- Console: console_width
+- Panel: panel_border_style, panel_box, panel_title_align
+- Property labels: property_style
+- Tables: table_index_style, table_header_style, table_round_floats, table_spacing</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Customize styling:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">table_header_style</span> <span class="o">=</span> <span class="s1">&#39;bold magenta&#39;</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">console_width</span> <span class="o">=</span> <span class="mi">120</span>
+</pre></div>
+</div>
+<p>Access specific settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">console_width</span>
+<span class="n">border</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span>
+<span class="n">spacing</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">table_spacing</span>
+</pre></div>
+</div>
+<p>Share settings across objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shared</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="n">shared</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;yellow&#39;</span>
+<span class="n">shared</span><span class="o">.</span><span class="n">table_spacing</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">obj1</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">shared</span>
+<span class="n">obj2</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">shared</span>
+<span class="c1"># Both objects now share the same styling</span>
+</pre></div>
+</div>
+<p>Load saved theme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;dark_theme.disp&#39;</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">theme</span>
+</pre></div>
+</div>
+<p>Save current settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_custom_theme.disp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Temporary style changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modify for one display</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">console_width</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="c1"># Reset to defaults</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jangada.display.Displayable.format_as_form">
+<span class="sig-name descname"><span class="pre">format_as_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v3.0.0)"><span class="pre">Series</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Table</span></span></span><a class="headerlink" href="#jangada.display.Displayable.format_as_form" title="Link to this definition">#</a></dt>
+<dd><p>Format data as key-value form.</p>
+<p>Creates two-column table with keys (left) and values (right).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">dict[str, str] or pandas.Series</span></dt><dd><p>Key-value pairs to display.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>Table</dt><dd><p>Rich Table in form layout.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Keys automatically get ‘:’ appended and use property_style.
+Values are left-aligned with no special styling.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">form</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="s1">&#39;25&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;City&#39;</span><span class="p">:</span> <span class="s1">&#39;NYC&#39;</span>
+<span class="gp">... </span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jangada.display.Displayable.format_as_table">
+<span class="sig-name descname"><span class="pre">format_as_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0)"><span class="pre">DataFrame</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_index_as_property</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_header_as_property</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_header</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">31</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Table</span></span></span><a class="headerlink" href="#jangada.display.Displayable.format_as_table" title="Link to this definition">#</a></dt>
+<dd><p>Format DataFrame as Rich table.</p>
+<p>Creates formatted table with automatic alignment, optional truncation,
+and extensive customization options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>frame</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Data to display.</p>
+</dd>
+<dt><strong>show_index</strong><span class="classifier">bool, optional</span></dt><dd><p>Include index column. Default True.</p>
+</dd>
+<dt><strong>format_index_as_property</strong><span class="classifier">bool, optional</span></dt><dd><p>Use property_style for index. Default False.</p>
+</dd>
+<dt><strong>format_header_as_property</strong><span class="classifier">bool, optional</span></dt><dd><p>Use property_style for headers. Default False.</p>
+</dd>
+<dt><strong>align_header</strong><span class="classifier">str or dict[str, str], optional</span></dt><dd><p>Header alignment. Default ‘center’.</p>
+</dd>
+<dt><strong>align_column</strong><span class="classifier">str, dict[str, str], or None, optional</span></dt><dd><p>Column alignment. None = auto-detect. Default None.</p>
+</dd>
+<dt><strong>max_rows</strong><span class="classifier">int, optional</span></dt><dd><p>Max rows before truncation. Default 31.</p>
+</dd>
+<dt><strong>**kwargs</strong></dt><dd><p>Additional options:
+- header_style : str or None
+- index_style : str or None
+- round_floats : int, dict, or None</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>Table</dt><dd><p>Formatted Rich Table.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>If alignment or rounding parameters have invalid types.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Auto-alignment (align_column=None): numeric right, datetime/text left.</p>
+<p>Truncation: Shows first n/2 rows, ‘…’, last n/2 rows when &gt; max_rows.</p>
+<p>Creates DataFrame copy for processing.</p>
+<p class="rubric">Examples</p>
+<p>Basic usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Custom alignment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">align_column</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Float rounding:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">round_floats</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Large dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jangada.display.Displayable.to_html">
+<span class="sig-name descname"><span class="pre">to_html</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#jangada.display.Displayable.to_html" title="Link to this definition">#</a></dt>
+<dd><p>Export display as HTML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>HTML with inline styles.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jangada.display.Displayable.to_svg">
+<span class="sig-name descname"><span class="pre">to_svg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#jangada.display.Displayable.to_svg" title="Link to this definition">#</a></dt>
+<dd><p>Export display as SVG.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>SVG vector graphics.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">svg</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_svg</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.svg&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="core-concepts">
+<h2>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h2>
+<section id="template-method-pattern">
+<h3>Template Method Pattern<a class="headerlink" href="#template-method-pattern" title="Link to this heading">#</a></h3>
+<p>Displayable uses the <strong>template method pattern</strong>: subclasses implement content,
+framework handles formatting.</p>
+<p><strong>Subclass implements:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_title()</span></code> - Returns the panel title</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_content()</span></code> - Returns the panel body</p></li>
+</ul>
+<p><strong>Framework provides:</strong></p>
+<ul class="simple">
+<li><p>Panel creation and styling</p></li>
+<li><p>Border and title formatting</p></li>
+<li><p>Console rendering</p></li>
+<li><p>String capture</p></li>
+<li><p>Export functions</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyObject</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="c1"># You implement these:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;My Object&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Object contents here&quot;</span>
+
+<span class="c1"># Framework does the rest:</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>  <span class="c1"># Formatted panel automatically</span>
+</pre></div>
+</div>
+</section>
+<section id="rich-integration">
+<h3>Rich Integration<a class="headerlink" href="#rich-integration" title="Link to this heading">#</a></h3>
+<p>Displayable integrates deeply with Rich:</p>
+<p><strong>Magic methods:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__rich__()</span></code> - Direct Rich rendering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> - Captured Rich output with ANSI codes</p></li>
+</ul>
+<p><strong>Usage contexts:</strong></p>
+<ul class="simple">
+<li><p>Rich Console: <code class="docutils literal notranslate"><span class="pre">console.print(obj)</span></code></p></li>
+<li><p>IPython/Jupyter: Display <code class="docutils literal notranslate"><span class="pre">obj</span></code> directly</p></li>
+<li><p>Standard print: <code class="docutils literal notranslate"><span class="pre">print(obj)</span></code></p></li>
+<li><p>Logging: <code class="docutils literal notranslate"><span class="pre">logger.info(str(obj))</span></code></p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Console</span>
+
+<span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+
+<span class="c1"># All of these work:</span>
+<span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>  <span class="c1"># Uses __rich__()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>          <span class="c1"># Uses __str__()</span>
+<span class="n">obj</span>                 <span class="c1"># IPython display via __rich__()</span>
+</pre></div>
+</div>
+</section>
+<section id="display-settings">
+<h3>Display Settings<a class="headerlink" href="#display-settings" title="Link to this heading">#</a></h3>
+<p>Each Displayable instance has its own <strong>DisplaySettings</strong> object:</p>
+<p><strong>Factory pattern:</strong></p>
+<ul class="simple">
+<li><p>Each instance gets independent settings</p></li>
+<li><p>No shared state by default</p></li>
+<li><p>Can share settings explicitly if desired</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obj1</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">()</span>
+<span class="n">obj2</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">()</span>
+
+<span class="c1"># Independent settings</span>
+<span class="n">obj1</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+<span class="n">obj2</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+
+<span class="c1"># Or share settings</span>
+<span class="n">shared</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="n">obj1</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">shared</span>
+<span class="n">obj2</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">shared</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="helper-methods">
+<h2>Helper Methods<a class="headerlink" href="#helper-methods" title="Link to this heading">#</a></h2>
+<section id="format-as-form">
+<h3>format_as_form<a class="headerlink" href="#format-as-form" title="Link to this heading">#</a></h3>
+<p>Creates key-value form displays:</p>
+<p><strong>Basic usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">({</span>
+        <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="s1">&#39;25&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;City&#39;</span><span class="p">:</span> <span class="s1">&#39;NYC&#39;</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p><strong>With pandas Series</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
+        <span class="s1">&#39;Mean&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+        <span class="s1">&#39;Std&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Features:</strong></p>
+<ul class="simple">
+<li><p>Keys automatically get <code class="docutils literal notranslate"><span class="pre">:</span></code> appended</p></li>
+<li><p>Keys styled with <code class="docutils literal notranslate"><span class="pre">property_style</span></code> setting</p></li>
+<li><p>Values left-aligned</p></li>
+<li><p>Compact layout (no borders)</p></li>
+</ul>
+</section>
+<section id="format-as-table">
+<h3>format_as_table<a class="headerlink" href="#format-as-table" title="Link to this heading">#</a></h3>
+<p>Creates formatted tables from DataFrames:</p>
+<p><strong>Basic usage</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>With options</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span>
+        <span class="n">show_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">format_header_as_property</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">max_rows</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">round_floats</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Features:</strong></p>
+<ul class="simple">
+<li><p>Auto-alignment by dtype (numbers right, text left)</p></li>
+<li><p>Optional index column display</p></li>
+<li><p>Truncation for large datasets (first n/2, …, last n/2)</p></li>
+<li><p>Float rounding (global or per-column)</p></li>
+<li><p>Flexible column/header alignment</p></li>
+<li><p>Rich styling integration</p></li>
+</ul>
+<p><strong>Alignment options</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># All columns same alignment</span>
+<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">align_column</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+
+<span class="c1"># Per-column alignment</span>
+<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">align_column</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span>
+<span class="p">})</span>
+
+<span class="c1"># Auto-detect (default)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">align_column</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Float rounding</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Round all floats to 2 decimals</span>
+<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">round_floats</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Per-column rounding</span>
+<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">round_floats</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;percentage&#39;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p><strong>Truncation</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show first 10, ..., last 10 rows</span>
+<span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="displaysettings-configuration">
+<h2>DisplaySettings Configuration<a class="headerlink" href="#displaysettings-configuration" title="Link to this heading">#</a></h2>
+<section id="console-settings">
+<h3>Console Settings<a class="headerlink" href="#console-settings" title="Link to this heading">#</a></h3>
+<dl>
+<dt><strong>console_width</strong><span class="classifier">int</span></dt><dd><p>Maximum console width in characters. Default: 150</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">console_width</span> <span class="o">=</span> <span class="mi">120</span>  <span class="c1"># Narrower display</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">console_width</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># Wider display</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="property-styling">
+<h3>Property Styling<a class="headerlink" href="#property-styling" title="Link to this heading">#</a></h3>
+<dl>
+<dt><strong>property_style</strong><span class="classifier">str</span></dt><dd><p>Rich style for property labels in forms. Default: ‘bold bright_yellow’</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">property_style</span> <span class="o">=</span> <span class="s1">&#39;bold cyan&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">property_style</span> <span class="o">=</span> <span class="s1">&#39;italic bright_white&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="panel-styling">
+<h3>Panel Styling<a class="headerlink" href="#panel-styling" title="Link to this heading">#</a></h3>
+<dl>
+<dt><strong>panel_border_style</strong><span class="classifier">str</span></dt><dd><p>Border color/style. Default: ‘bright_cyan’</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;bold red&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;#FF00FF&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>panel_box</strong><span class="classifier">str</span></dt><dd><p>Box style name from rich.box. Default: ‘ROUNDED’</p>
+<p>Valid values:</p>
+<ul class="simple">
+<li><p>‘ROUNDED’: ╭─╮ (friendly, default)</p></li>
+<li><p>‘SQUARE’: ┌─┐ (classic)</p></li>
+<li><p>‘DOUBLE’: ╔═╗ (formal)</p></li>
+<li><p>‘HEAVY’: ┏━┓ (bold)</p></li>
+<li><p>‘MINIMAL’: ╶─╴ (subtle)</p></li>
+<li><p>‘ASCII’: +–+ (compatibility)</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">panel_box</span> <span class="o">=</span> <span class="s1">&#39;DOUBLE&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">panel_box</span> <span class="o">=</span> <span class="s1">&#39;MINIMAL&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>panel_title_align</strong><span class="classifier">str</span></dt><dd><p>Title alignment. Default: ‘center’</p>
+<p>Valid values: ‘left’, ‘center’, ‘right’</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">panel_title_align</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="table-styling">
+<h3>Table Styling<a class="headerlink" href="#table-styling" title="Link to this heading">#</a></h3>
+<dl>
+<dt><strong>table_index_style</strong><span class="classifier">str or None</span></dt><dd><p>Index column style. Default: None</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">table_index_style</span> <span class="o">=</span> <span class="s1">&#39;dim&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">table_index_style</span> <span class="o">=</span> <span class="s1">&#39;bold yellow&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>table_header_style</strong><span class="classifier">str or None</span></dt><dd><p>Header row style. Default: ‘bold bright_yellow’</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">table_header_style</span> <span class="o">=</span> <span class="s1">&#39;bold white&#39;</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">table_header_style</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># No styling</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>table_round_floats</strong><span class="classifier">int or None</span></dt><dd><p>Global float rounding. Default: None</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">table_round_floats</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Two decimals</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">table_round_floats</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Full precision</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>table_spacing</strong><span class="classifier">int</span></dt><dd><p>Column spacing in characters. Default: 4</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">table_spacing</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Compact</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">table_spacing</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Spacious</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+</section>
+<section id="usage-patterns">
+<h2>Usage Patterns<a class="headerlink" href="#usage-patterns" title="Link to this heading">#</a></h2>
+<section id="simple-text-display">
+<h3>Simple Text Display<a class="headerlink" href="#simple-text-display" title="Link to this heading">#</a></h3>
+<p>Display simple text with styling:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Message</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title_text</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title_text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold cyan&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Alert&quot;</span><span class="p">,</span> <span class="s2">&quot;System update available&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="styled-title">
+<h3>Styled Title<a class="headerlink" href="#styled-title" title="Link to this heading">#</a></h3>
+<p>Use Rich Text for advanced styling:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Text</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Text</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span>
+        <span class="p">(</span><span class="s2">&quot;Sensor &quot;</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot; [&quot;</span><span class="p">,</span> <span class="s2">&quot;dim&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">[:</span><span class="mi">8</span><span class="p">],</span> <span class="s2">&quot;yellow&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;dim&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dynamic-styling">
+<h3>Dynamic Styling<a class="headerlink" href="#dynamic-styling" title="Link to this heading">#</a></h3>
+<p>Change style based on state:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="k">else</span> <span class="s2">&quot;red&quot;</span>
+    <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;bold </span><span class="si">{</span><span class="n">style</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;[green]Active[/green]&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="k">else</span> <span class="s2">&quot;[red]Inactive[/red]&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="combined-layouts">
+<h3>Combined Layouts<a class="headerlink" href="#combined-layouts" title="Link to this heading">#</a></h3>
+<p>Combine forms and tables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich.console</span><span class="w"> </span><span class="kn">import</span> <span class="n">Group</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Summary info</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">({</span>
+        <span class="s1">&#39;Total Samples&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)),</span>
+        <span class="s1">&#39;Mean&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Std Dev&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="p">})</span>
+
+    <span class="c1"># Detailed table</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+        <span class="n">max_rows</span><span class="o">=</span><span class="mi">10</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Combine with blank line separator</span>
+    <span class="k">return</span> <span class="n">Group</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nested-panels">
+<h3>Nested Panels<a class="headerlink" href="#nested-panels" title="Link to this heading">#</a></h3>
+<p>Create nested panel structures:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich.panel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panel</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Inner panels</span>
+    <span class="n">info_panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">),</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Info&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">data_panel</span> <span class="o">=</span> <span class="n">Panel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Group them</span>
+    <span class="k">return</span> <span class="n">Group</span><span class="p">(</span><span class="n">info_panel</span><span class="p">,</span> <span class="n">data_panel</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="conditional-content">
+<h3>Conditional Content<a class="headerlink" href="#conditional-content" title="Link to this heading">#</a></h3>
+<p>Show different content based on state:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;[dim italic]No data available[/dim italic]&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">summary_mode</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_summary</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="advanced-topics">
+<h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Link to this heading">#</a></h2>
+<section id="theme-management">
+<h3>Theme Management<a class="headerlink" href="#theme-management" title="Link to this heading">#</a></h3>
+<p><strong>Create themes</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dark theme</span>
+<span class="n">dark</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="n">dark</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;bright_cyan&#39;</span>
+<span class="n">dark</span><span class="o">.</span><span class="n">property_style</span> <span class="o">=</span> <span class="s1">&#39;bold bright_yellow&#39;</span>
+<span class="n">dark</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;dark.disp&#39;</span><span class="p">)</span>
+
+<span class="c1"># Light theme</span>
+<span class="n">light</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="n">light</span><span class="o">.</span><span class="n">panel_border_style</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+<span class="n">light</span><span class="o">.</span><span class="n">property_style</span> <span class="o">=</span> <span class="s1">&#39;bold black&#39;</span>
+<span class="n">light</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;light.disp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Apply themes</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and apply</span>
+<span class="n">theme</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;dark.disp&#39;</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">theme</span>
+
+<span class="c1"># Or set directly</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;corporate.disp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Share themes</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theme</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;theme.disp&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">theme</span>
+</pre></div>
+</div>
+</section>
+<section id="export-functions">
+<h3>Export Functions<a class="headerlink" href="#export-functions" title="Link to this heading">#</a></h3>
+<p><strong>HTML export</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;report.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+<span class="c1"># Embed in larger document</span>
+<span class="n">full_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;html&gt;</span>
+<span class="s1">&lt;head&gt;&lt;title&gt;Report&lt;/title&gt;&lt;/head&gt;</span>
+<span class="s1">&lt;body&gt;</span>
+<span class="s1">    &lt;h1&gt;System Report&lt;/h1&gt;</span>
+<span class="s1">    </span><span class="si">{</span><span class="n">obj</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span><span class="si">}</span>
+<span class="s1">&lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p><strong>SVG export</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svg</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_svg</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;diagram.svg&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Features:</strong></p>
+<ul class="simple">
+<li><p>Preserves colors and formatting</p></li>
+<li><p>Self-contained (inline styles)</p></li>
+<li><p>HTML includes CSS</p></li>
+<li><p>SVG is vector graphics (scalable)</p></li>
+</ul>
+</section>
+<section id="custom-panel-configuration">
+<h3>Custom Panel Configuration<a class="headerlink" href="#custom-panel-configuration" title="Link to this heading">#</a></h3>
+<p>Override <code class="docutils literal notranslate"><span class="pre">_display_panel()</span></code> for complete control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_display_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Panel</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_content</span><span class="p">(),</span>
+        <span class="n">title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_title</span><span class="p">(),</span>
+        <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;Footer text&quot;</span><span class="p">,</span>  <span class="c1"># Add footer</span>
+        <span class="n">border_style</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span><span class="p">,</span>
+        <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># Custom padding</span>
+        <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Fill width</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="rich-renderables">
+<h3>Rich Renderables<a class="headerlink" href="#rich-renderables" title="Link to this heading">#</a></h3>
+<p>Return any Rich renderable from <code class="docutils literal notranslate"><span class="pre">_content()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rich.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.syntax</span><span class="w"> </span><span class="kn">import</span> <span class="n">Syntax</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Tree structure</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">Tree</span><span class="p">(</span><span class="s2">&quot;Components&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tree</span>
+
+<span class="c1"># Or syntax-highlighted code</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Syntax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">)</span>
+
+<span class="c1"># Or styled table</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">show_header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">header_style</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+    <span class="c1"># ... add rows</span>
+    <span class="k">return</span> <span class="n">table</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="examples-gallery">
+<h2>Examples Gallery<a class="headerlink" href="#examples-gallery" title="Link to this heading">#</a></h2>
+<section id="data-report">
+<h3>Data Report<a class="headerlink" href="#data-report" title="Link to this heading">#</a></h3>
+<p>Scientific data report with statistics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DataReport</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data Report: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold cyan&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Statistics</span>
+        <span class="n">stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">({</span>
+            <span class="s1">&#39;Samples&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)),</span>
+            <span class="s1">&#39;Mean&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Std Dev&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Min&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Max&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">})</span>
+
+        <span class="c1"># Data preview</span>
+        <span class="n">preview</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+            <span class="n">show_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">max_rows</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">round_floats</span><span class="o">=</span><span class="mi">3</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Group</span><span class="p">(</span>
+            <span class="n">Panel</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Statistics&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">Panel</span><span class="p">(</span><span class="n">preview</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Data Preview&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="system-status">
+<h3>System Status<a class="headerlink" href="#system-status" title="Link to this heading">#</a></h3>
+<p>System status dashboard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">SystemStatus</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system_name</span><span class="p">,</span> <span class="n">metrics</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_name</span> <span class="o">=</span> <span class="n">system_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span> <span class="o">=</span> <span class="n">metrics</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚙ </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">system_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">status_style</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span> <span class="k">else</span> <span class="s2">&quot;red&quot;</span>
+
+        <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Status&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">status_style</span><span class="si">}</span><span class="s2">]</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">[/</span><span class="si">{</span><span class="n">status_style</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;Uptime&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;uptime&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;CPU&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;cpu&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;Memory&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;memory&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;Disk&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;disk&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="experiment-results">
+<h3>Experiment Results<a class="headerlink" href="#experiment-results" title="Link to this heading">#</a></h3>
+<p>Experimental results with data table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ExperimentResults</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment_name</span><span class="p">,</span> <span class="n">results_df</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">experiment_name</span> <span class="o">=</span> <span class="n">experiment_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">results_df</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span>
+            <span class="p">(</span><span class="s2">&quot;Experiment: &quot;</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">experiment_name</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">,</span>
+            <span class="n">show_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">format_index_as_property</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">format_header_as_property</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">align_column</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+            <span class="n">round_floats</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+            <span class="n">max_rows</span><span class="o">=</span><span class="mi">30</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration-display">
+<h3>Configuration Display<a class="headerlink" href="#configuration-display" title="Link to this heading">#</a></h3>
+<p>Display configuration settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ConfigView</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_dict</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config_dict</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Configuration&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;bold yellow&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Flatten nested config</span>
+        <span class="n">flat_config</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">section</span><span class="p">,</span> <span class="n">settings</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">flat_config</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">section</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">(</span><span class="n">flat_config</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<section id="styling-guidelines">
+<h3>Styling Guidelines<a class="headerlink" href="#styling-guidelines" title="Link to this heading">#</a></h3>
+<p><strong>Use semantic colors:</strong></p>
+<ul class="simple">
+<li><p>Green: Success, active, OK</p></li>
+<li><p>Red: Error, inactive, warning</p></li>
+<li><p>Yellow: Attention, highlight</p></li>
+<li><p>Cyan/Blue: Info, neutral</p></li>
+<li><p>Dim: Secondary info</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;[green]Active[/green]&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="k">else</span> <span class="s2">&quot;[red]Inactive[/red]&quot;</span>
+<span class="n">priority</span> <span class="o">=</span> <span class="s2">&quot;[yellow]High[/yellow]&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">priority</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="s2">&quot;Normal&quot;</span>
+</pre></div>
+</div>
+<p><strong>Keep styles consistent:</strong></p>
+<ul class="simple">
+<li><p>Use display_settings for global styles</p></li>
+<li><p>Override only when needed</p></li>
+<li><p>Document color meanings</p></li>
+</ul>
+</section>
+<section id="content-organization">
+<h3>Content Organization<a class="headerlink" href="#content-organization" title="Link to this heading">#</a></h3>
+<p><strong>Progressive disclosure:</strong></p>
+<ul class="simple">
+<li><p>Summary info first</p></li>
+<li><p>Detailed data after</p></li>
+<li><p>Most important at top</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Group</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_summary</span><span class="p">(),</span>      <span class="c1"># Key info</span>
+        <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_details</span><span class="p">(),</span>      <span class="c1"># Full data</span>
+        <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_footer</span><span class="p">()</span>        <span class="c1"># Meta info</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Appropriate detail level:</strong></p>
+<ul class="simple">
+<li><p>Forms: 5-15 items</p></li>
+<li><p>Tables: 10-30 rows</p></li>
+<li><p>Text: 5-10 lines</p></li>
+</ul>
+<p><strong>Use truncation:</strong></p>
+<ul class="simple">
+<li><p>max_rows for large datasets</p></li>
+<li><p>Summaries for long text</p></li>
+<li><p>Pagination if needed</p></li>
+</ul>
+</section>
+<section id="performance">
+<h3>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h3>
+<p><strong>Avoid expensive operations in _content():</strong></p>
+<ul class="simple">
+<li><p>Cache computed values</p></li>
+<li><p>Pre-process data</p></li>
+<li><p>Don’t query databases directly</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DataView</span><span class="p">(</span><span class="n">Displayable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_summary</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_summary</span><span class="p">()</span>  <span class="c1"># Cache</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Expensive computation done once</span>
+        <span class="k">return</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Use cached summary</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_form</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="error-handling">
+<h3>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h3>
+<p><strong>Handle missing data gracefully:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;[dim italic]No data available[/dim italic]&quot;</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;[dim italic]No records found[/dim italic]&quot;</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_as_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Validate in __init__, not _content:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data cannot be None&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<section id="common-issues">
+<h3>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h3>
+<p><strong>Panel not displaying:</strong></p>
+<ul class="simple">
+<li><p>Check that _title() and _content() return valid types</p></li>
+<li><p>Ensure Rich is installed</p></li>
+<li><p>Verify console width setting</p></li>
+</ul>
+<p><strong>Colors not showing:</strong></p>
+<ul class="simple">
+<li><p>Terminal may not support colors</p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">force_terminal</span></code> setting</p></li>
+<li><p>Try different terminal emulator</p></li>
+</ul>
+<p><strong>Table formatting issues:</strong></p>
+<ul class="simple">
+<li><p>DataFrame has invalid dtypes</p></li>
+<li><p>Missing required columns</p></li>
+<li><p>Index issues (try <code class="docutils literal notranslate"><span class="pre">show_index=False</span></code>)</p></li>
+</ul>
+<p><strong>Float rounding not working:</strong></p>
+<ul class="simple">
+<li><p>Check dtype is actually float</p></li>
+<li><p>Verify round_floats format (int or dict)</p></li>
+<li><p>Column names must match exactly in dict</p></li>
+</ul>
+</section>
+<section id="theme-issues">
+<h3>Theme Issues<a class="headerlink" href="#theme-issues" title="Link to this heading">#</a></h3>
+<p><strong>Theme not loading:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check file exists</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="k">assert</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;theme.disp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+
+<span class="c1"># Load with error handling</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;theme.disp&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to load theme: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Settings not applying:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verify settings object is assigned</span>
+<span class="k">assert</span> <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+<span class="c1"># Check specific setting</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span><span class="o">.</span><span class="n">panel_border_style</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="export-issues">
+<h3>Export Issues<a class="headerlink" href="#export-issues" title="Link to this heading">#</a></h3>
+<p><strong>HTML/SVG missing content:</strong></p>
+<ul class="simple">
+<li><p>Content may not render in export context</p></li>
+<li><p>Some Rich features don’t export well</p></li>
+<li><p>Try simpler renderables</p></li>
+</ul>
+<p><strong>File encoding issues:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use explicit UTF-8</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="performance-considerations">
+<h2>Performance Considerations<a class="headerlink" href="#performance-considerations" title="Link to this heading">#</a></h2>
+<section id="string-rendering">
+<h3>String Rendering<a class="headerlink" href="#string-rendering" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">__str__()</span></code> captures Rich output to string:</p>
+<ul class="simple">
+<li><p>Creates StringIO buffer</p></li>
+<li><p>Renders to buffer</p></li>
+<li><p>Returns buffered string</p></li>
+</ul>
+<p>For many objects, consider:</p>
+<ul class="simple">
+<li><p>Rendering once, caching result</p></li>
+<li><p>Direct <code class="docutils literal notranslate"><span class="pre">__rich__()</span></code> in Rich contexts</p></li>
+<li><p>Lazy rendering</p></li>
+</ul>
+</section>
+<section id="table-formatting">
+<h3>Table Formatting<a class="headerlink" href="#table-formatting" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">format_as_table()</span></code> creates DataFrame copy:</p>
+<ul class="simple">
+<li><p>Memory allocation for copy</p></li>
+<li><p>Type conversions (astype)</p></li>
+<li><p>String formatting for display</p></li>
+</ul>
+<p>For large DataFrames:</p>
+<ul class="simple">
+<li><p>Use max_rows to limit size</p></li>
+<li><p>Pre-filter data</p></li>
+<li><p>Consider pagination</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Display Settings<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Each instance has independent settings:</p>
+<ul>
+<li><p>Small memory overhead</p></li>
+<li><p>Factory creates new instance each time</p></li>
+<li><p>Share settings to reduce overhead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shared</span> <span class="o">=</span> <span class="n">DisplaySettings</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">display_settings</span> <span class="o">=</span> <span class="n">shared</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<section id="related-modules">
+<h3>Related Modules<a class="headerlink" href="#related-modules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="xref std std-doc">../serialization/persistable</span> - DisplaySettings uses Persistable</p></li>
+<li><p><span class="xref std std-doc">../mixin/nameable</span> - Often combined with Displayable</p></li>
+<li><p><span class="xref std std-doc">../system/system</span> - Uses Displayable for hierarchy display</p></li>
+</ul>
+</section>
+<section id="external-resources">
+<h3>External Resources<a class="headerlink" href="#external-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rich.readthedocs.io/">Rich Documentation</a> - Rich library docs</p></li>
+<li><p><a class="reference external" href="https://rich.readthedocs.io/en/stable/protocol.html">Rich Renderables</a> - Rich protocol</p></li>
+<li><p><a class="reference external" href="https://rich.readthedocs.io/en/stable/tables.html">Rich Tables</a> - Table reference</p></li>
+<li><p><a class="reference external" href="https://rich.readthedocs.io/en/stable/text.html">Rich Text</a> - Text styling</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../mixin/generated/jangada.mixin.Activatable.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jangada.mixin.Activatable</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="generated/jangada.display.DisplaySettings.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jangada.display.DisplaySettings</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-reference">Class Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaysettings">DisplaySettings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.DisplaySettings"><code class="docutils literal notranslate"><span class="pre">DisplaySettings</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displayable">Displayable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.Displayable"><code class="docutils literal notranslate"><span class="pre">Displayable</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.Displayable.display_settings"><code class="docutils literal notranslate"><span class="pre">Displayable.display_settings</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.Displayable.format_as_form"><code class="docutils literal notranslate"><span class="pre">Displayable.format_as_form()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.Displayable.format_as_table"><code class="docutils literal notranslate"><span class="pre">Displayable.format_as_table()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.Displayable.to_html"><code class="docutils literal notranslate"><span class="pre">Displayable.to_html()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#jangada.display.Displayable.to_svg"><code class="docutils literal notranslate"><span class="pre">Displayable.to_svg()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#template-method-pattern">Template Method Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rich-integration">Rich Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-settings">Display Settings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-methods">Helper Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-as-form">format_as_form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-as-table">format_as_table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaysettings-configuration">DisplaySettings Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#console-settings">Console Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property-styling">Property Styling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#panel-styling">Panel Styling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-styling">Table Styling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-patterns">Usage Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-text-display">Simple Text Display</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#styled-title">Styled Title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-styling">Dynamic Styling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-layouts">Combined Layouts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-panels">Nested Panels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-content">Conditional Content</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics">Advanced Topics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme-management">Theme Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-functions">Export Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-panel-configuration">Custom Panel Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rich-renderables">Rich Renderables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-gallery">Examples Gallery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-report">Data Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-status">System Status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-results">Experiment Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-display">Configuration Display</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-guidelines">Styling Guidelines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-organization">Content Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme-issues">Theme Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-issues">Export Issues</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-considerations">Performance Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-rendering">String Rendering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-formatting">Table Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Display Settings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-modules">Related Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-resources">External Resources</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/contents/api_reference/display/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Rafael R. L. Benevides, J. M. da Silva.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
